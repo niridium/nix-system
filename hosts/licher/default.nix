@@ -14,6 +14,7 @@
     ../../modules/services/navidrome.nix
     ../../modules/tailscale.nix
     ../../modules/wakeonlan.nix
+    ../../modules/remote_builder.nix
   ];
   fileSystems."/storage" = {
     device = "/dev/md127";

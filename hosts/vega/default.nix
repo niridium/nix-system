@@ -12,5 +12,6 @@
     ../../modules/tailscale.nix
     ../../modules/gaming/factorio_login.nix
     ../../modules/gaming/steam.nix
+    ../../modules/distributed-builds.nix
   ];
 }
