@@ -1,157 +1,132 @@
-{pkgs, ...}: {
+{
   programs.zed-editor = {
     enable = true;
     extensions = [];
-    extraPackages = with pkgs; [
-    ];
     userSettings = {
-      # === Agent & Predictions ===
-      agent = {
-        play_sound_when_agent_done = "when_hidden";
-      };
-      edit_predictions.mode = "eager";
-
-      # === Autosave ===
       autosave = "on_focus_change";
+      bottom_dock_layout = "full";
+      buffer_font_family = "Iosevka Nerd Font";
+      buffer_line_height = "standard";
+      calls.mute_on_join = true;
+      collaboration_panel.button = false;
+      cursor_shape = "bar";
+      diagnostics.inline.enabled = true;
+      file_finder.file_icons = true;
+      focus_follows_mouse.enabled = true;
+      format_on_save = "off";
+      git.inline_blame.show_commit_summary = true;
+      gutter.folds = false;
+      helix_mode = true;
+      minimap.show = "never";
+      outline_panel.button = false;
+      scroll_beyond_last_line = "vertical_scroll_margin";
+      search.button = false;
+      soft_wrap = "editor_width";
+      use_smartcase_search = true;
+      use_system_window_tabs = true;
 
-      # === Cursor ===
-      cursor_blink = true;
-      cursor_shape = "underline";
-
-      # === Diagnostics ===
-      diagnostics = {
-        inline.enabled = true;
-      };
-
-      # === File Finder ===
-      file_finder = {
-        file_icons = true;
-      };
-
-      # === Git ===
-      git = {
-        git_gutter = "tracked_files";
-        inline_blame = {
-          enabled = true;
-          show_commit_summary = true;
+      agent = {
+        dock = "left";
+        single_file_review = true;
+        enable_feedback = false;
+        show_turn_stats = true;
+        play_sound_when_agent_done = "when_hidden";
+        default_model = {
+          provider = "ollama";
+          model = "qwen3.5:9b";
+          enable_thinking = true;
         };
       };
 
-      # === Gutter ===
-      gutter = {
-        folds = false;
+      edit_predictions = {
+        ollama = {
+          model = "qwen2.5-coder:7b-base";
+          api_url = "https://ollama.sole-alkaid.ts.net";
+        };
+        provider = "ollama";
+        mode = "eager";
       };
 
-      # === Helix ===
-      helix_mode = true;
+      git_panel = {
+        dock = "right";
+        tree_view = true;
+      };
 
-      # === Indentation ===
       indent_guides = {
         active_line_width = 10;
-        background_coloring = "disabled";
+        background_coloring = "indent_aware";
         coloring = "indent_aware";
         enabled = true;
         line_width = 2;
       };
 
-      # === Layout & Window ===
-      bottom_dock_layout = "right_aligned";
-      title_bar = {
-        show_menus = false;
-        show_sign_in = false;
-        show_user_menu = true;
-      };
-      use_system_window_tabs = true;
-
-      # === Minimaps ===
-      minimap = {
-        show = "never";
+      language_models = {
+        ollama = {
+          context_window = 30000;
+          api_url = "https://ollama.sole-alkaid.ts.net";
+        };
       };
 
-      # === Panels ===
-      collaboration_panel = {
-        button = false;
-      };
-      git_panel = {
-        dock = "right";
-        status_style = "icon";
-        tree_view = true;
-      };
-      outline_panel = {
-        auto_fold_dirs = true;
-        auto_reveal_entries = true;
-        button = true;
-        file_icons = true;
-        folder_icons = true;
-        git_status = true;
-      };
       project_panel = {
-        default_width = 250;
         entry_spacing = "standard";
-        git_status = true;
+        git_status = false;
         hide_root = true;
         indent_size = 12;
       };
 
-      # === Search ===
-      search = {
-        button = false;
-      };
-
-      # === Scroll ===
-      scroll_beyond_last_line = "vertical_scroll_margin";
-      sticky_scroll = {
-        enabled = false;
-      };
-
-      # === Status Bar ===
-      status_bar = {
-        active_language_button = true;
-        cursor_position_button = true;
-      };
-
-      # === Terminal ===
-      terminal = {
-        button = false;
-      };
-
-      # === Theme ===
-      theme = {
-        mode = "system";
-      };
-
-      # === Tabs ===
-      tab_bar = {
-        show = true;
-        show_nav_history_buttons = false;
-        show_tab_bar_buttons = false;
-      };
       tabs = {
         file_icons = true;
-        git_status = true;
         show_close_button = "hidden";
-        show_diagnostics = "all";
       };
 
-      # === Calls ===
-      calls = {
-        mute_on_join = true;
+      tab_bar = {
+        show_nav_history_buttons = false;
+        show_tab_bar_buttons = false;
+        show_pinned_tabs_in_separate_row = true;
       };
 
-      # === Languages ===
+      terminal = {
+        shell.program = "bash";
+        font_size = 16;
+        font_family = "Iosevka Nerd Font";
+        cursor_shape = "bar";
+      };
+
+      theme = {
+        mode = "system";
+        light = "Noctalia Light";
+        dark = "Noctalia Dark";
+      };
+
+      title_bar = {
+        button_layout = "";
+        show_sign_in = false;
+      };
+
       languages = {
-        Nix = {
-          language_servers = [
-            "nil"
-            "nixd"
-          ];
+        ${"Shell Script"} = {
+          format_on_save = "on";
           formatter = {
             external = {
+              command = "shfmt";
               arguments = [
-                "--"
-                "--quiet"
+                "--filename"
+                "{buffer_path}"
+                "--indent"
+                "4"
               ];
-              command = "nixfmt";
+            };
+          };
+        };
+        Nix = {
+          language_servers = [
+            "!nil"
+            "nixd"
+          ];
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "alejandra";
             };
           };
         };
