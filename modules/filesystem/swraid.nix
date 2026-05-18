@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   boot.swraid.mdadmConf = "MAILADDR ruben.ledesma.go@protonmail.com";
-  environment.systemPackages = [ pkgs.mdadm ];
+  environment.systemPackages = [pkgs.mdadm];
 }

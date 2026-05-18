@@ -1,6 +1,9 @@
-{ hostname, username, ... }:
 {
-  users.users.${username}.extraGroups = [ "networkmanager" ];
+  hostname,
+  username,
+  ...
+}: {
+  users.users.${username}.extraGroups = ["networkmanager"];
   networking = {
     hostName = hostname;
     useDHCP = false;

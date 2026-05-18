@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   services.gnome-keyring.enable = lib.mkForce false;
   programs.keepassxc = {
     enable = true;

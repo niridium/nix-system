@@ -1,5 +1,8 @@
-{ inputs, pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.direnv-instant.homeModules.direnv-instant
   ];
@@ -23,17 +26,17 @@
       nix-direnv.enable = true;
     };
     direnv-instant.enable = true;
-  #   bash.bashrcExtra = ''
-  #     flakify() {
-  #       if [ ! -e flake.nix ]; then
-  #         nix flake new -t github:niridium/nix-shells .
-  #         echo "created flake.nix"
-  #       elif [ ! -e .envrc ]; then
-  #         echo "use flake" >> .envrc
-  #         echo "created .envrc"
-  #         direnv allow
-  #       fi
-  #       }
-  #   '';
+    #   bash.bashrcExtra = ''
+    #     flakify() {
+    #       if [ ! -e flake.nix ]; then
+    #         nix flake new -t github:niridium/nix-shells .
+    #         echo "created flake.nix"
+    #       elif [ ! -e .envrc ]; then
+    #         echo "use flake" >> .envrc
+    #         echo "created .envrc"
+    #         direnv allow
+    #       fi
+    #       }
+    #   '';
   };
 }

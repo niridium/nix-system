@@ -2,11 +2,10 @@
   pkgs,
   username,
   ...
-}:
-{
+}: {
   # Backlight control
   hardware.i2c.enable = true;
-  users.users.${username}.extraGroups = [ "i2c" ];
+  users.users.${username}.extraGroups = ["i2c"];
 
   services.greetd = {
     enable = true;

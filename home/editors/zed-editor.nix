@@ -1,11 +1,7 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   programs.zed-editor = {
     enable = true;
-    extensions = [ ];
+    extensions = [];
     extraPackages = with pkgs; [
     ];
     userSettings = {
@@ -106,7 +102,6 @@
       scroll_beyond_last_line = "vertical_scroll_margin";
       sticky_scroll = {
         enabled = false;
-
       };
 
       # === Status Bar ===

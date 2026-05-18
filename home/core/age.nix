@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   imports = [
     inputs.agenix.homeManagerModules.default
   ];
@@ -7,6 +6,6 @@
     inputs.agenix.packages.x86_64-linux.default
   ];
   age = {
-    identityPaths = [ "~/.ssh/key" ];
+    identityPaths = ["~/.ssh/key"];
   };
 }

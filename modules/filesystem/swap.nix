@@ -1,5 +1,4 @@
-{ swapspace, ... }:
-{
+{swapspace, ...}: {
   swapDevices = [
     {
       device = "/var/lib/swapfile";

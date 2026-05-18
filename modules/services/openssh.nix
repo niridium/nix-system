@@ -5,7 +5,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = [ "nixy" ];
+      AllowUsers = ["nixy"];
     };
   };
 }

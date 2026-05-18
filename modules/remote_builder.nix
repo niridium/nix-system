@@ -9,6 +9,6 @@
 
   nix = {
     nrBuildUsers = 64;
-    settings.trusted-users = [ "remotebuild" ];
+    settings.trusted-users = ["remotebuild"];
   };
 }

@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   imports = [
     inputs.noctalia.homeModules.default
   ];
@@ -10,7 +9,7 @@
       bar = {
         barType = "framed";
         position = "left";
-        monitors = [ ];
+        monitors = [];
         density = "spacious";
         showOutline = false;
         showCapsule = true;
@@ -92,7 +91,7 @@
         rightClickAction = "settings";
         rightClickFollowMouse = true;
         rightClickCommand = "";
-        screenOverrides = [ ];
+        screenOverrides = [];
       };
       general = {
         avatarImage = "/home/nixy/Pictures/Wallpapers/wallhaven_135vw3.jpg";
@@ -128,7 +127,7 @@
         clockStyle = "custom";
         clockFormat = "hh\nmm";
         passwordChars = false;
-        lockScreenMonitors = [ ];
+        lockScreenMonitors = [];
         lockScreenBlur = 0;
         lockScreenTint = 0;
         keybinds = {
@@ -205,7 +204,7 @@
         enabled = true;
         overviewEnabled = false;
         directory = "/home/nixy/Pictures/Wallpapers";
-        monitorDirectories = [ ];
+        monitorDirectories = [];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;
         viewMode = "single";
@@ -237,7 +236,7 @@
         wallhavenResolutionWidth = "";
         wallhavenResolutionHeight = "";
         sortOrder = "name";
-        favorites = [ ];
+        favorites = [];
       };
       appLauncher = {
         enableClipboardHistory = false;
@@ -247,7 +246,7 @@
         clipboardWatchTextCommand = "wl-paste --type text --watch cliphist store";
         clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
         position = "center";
-        pinnedApps = [ "com.mitchellh.ghostty" ];
+        pinnedApps = ["com.mitchellh.ghostty"];
         sortByMostUsed = true;
         terminalCommand = "alacritty -e";
         customLaunchPrefixEnabled = false;
@@ -354,8 +353,8 @@
         floatingRatio = 1;
         size = 1;
         onlySameOutput = true;
-        monitors = [ ];
-        pinnedApps = [ ];
+        monitors = [];
+        pinnedApps = [];
         colorizeIcons = false;
         showLauncherIcon = false;
         launcherPosition = "end";
@@ -438,7 +437,7 @@
         enabled = true;
         enableMarkdown = false;
         density = "default";
-        monitors = [ ];
+        monitors = [];
         location = "bottom_center";
         overlayLayer = true;
         backgroundOpacity = 1;
@@ -476,14 +475,14 @@
           1
           2
         ];
-        monitors = [ ];
+        monitors = [];
       };
       audio = {
         volumeStep = 5;
         volumeOverdrive = false;
         spectrumFrameRate = 60;
         visualizerType = "linear";
-        mprisBlacklist = [ ];
+        mprisBlacklist = [];
         preferredPlayer = "";
         volumeFeedback = true;
         volumeFeedbackSoundFile = "";
@@ -492,7 +491,7 @@
         brightnessStep = 5;
         enforceMinimum = false;
         enableDdcSupport = true;
-        backlightDeviceMappings = [ ];
+        backlightDeviceMappings = [];
       };
       colorSchemes = {
         useWallpaperColors = true;
@@ -587,7 +586,7 @@
         overviewEnabled = true;
         gridSnap = false;
         gridSnapScale = false;
-        monitorWidgets = [ ];
+        monitorWidgets = [];
       };
     };
   };

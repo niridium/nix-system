@@ -1,5 +1,4 @@
-{ systemdisk, ... }:
-{
+{systemdisk, ...}: {
   services = {
     btrfs.autoScrub = {
       enable = true;
@@ -15,7 +14,7 @@
     };
   };
   fileSystems."/" = {
-    options = [ "compress=zstd" ];
+    options = ["compress=zstd"];
     neededForBoot = true;
   };
   disko.devices = {
@@ -33,7 +32,7 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
+                mountOptions = ["umask=0077"];
               };
             };
             luks = {
@@ -44,7 +43,7 @@
                 settings.allowDiscards = true;
                 content = {
                   type = "btrfs";
-                  extraArgs = [ "-f" ];
+                  extraArgs = ["-f"];
                   mountpoint = "/";
                   subvolumes = {
                     "/rootfs".mountpoint = "/";

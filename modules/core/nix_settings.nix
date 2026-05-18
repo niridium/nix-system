@@ -3,7 +3,7 @@
   nix = {
     settings = {
       # auto-optimise-store = true;
-      trusted-users = [ "nixy" ];
+      trusted-users = ["nixy"];
       experimental-features = [
         "nix-command"
         "flakes"

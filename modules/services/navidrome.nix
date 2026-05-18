@@ -1,5 +1,4 @@
-{ serverdirectory, ... }:
-{
+{serverdirectory, ...}: {
   services.navidrome = {
     enable = true;
     settings = {

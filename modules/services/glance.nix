@@ -24,7 +24,7 @@
             {
               size = "small";
               widgets = [
-                { type = "calendar"; }
+                {type = "calendar";}
                 {
                   type = "server-stats";
                   servers = [
@@ -87,7 +87,7 @@
                     }
                   ];
                 }
-                { type = "to-do"; }
+                {type = "to-do";}
               ];
             }
           ];

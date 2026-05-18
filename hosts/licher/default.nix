@@ -20,7 +20,7 @@
     device = "/dev/md127";
     fsType = "btrfs";
     mountPoint = "/storage";
-    options = [ "compress=zstd" ];
+    options = ["compress=zstd"];
   };
   services.beesd.filesystems.storage = {
     spec = "/storage";

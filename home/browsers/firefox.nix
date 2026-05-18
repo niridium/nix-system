@@ -1,6 +1,9 @@
-{ inputs, config, ... }:
 {
-  imports = [ inputs.arkenfox.hmModules.arkenfox ];
+  inputs,
+  config,
+  ...
+}: {
+  imports = [inputs.arkenfox.hmModules.arkenfox];
   programs.firefox = {
     enable = true;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
@@ -39,7 +42,6 @@
           enable = true;
           # "0102"."browser.startup.page".value = 3;
           "0103"."browser.startup.homepage".value = "https://glance.sole-alkaid.ts.net";
-
         };
         "0200".enable = true;
         "0300" = {

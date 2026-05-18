@@ -35,11 +35,11 @@
         engines = {
           nix-packages = {
             name = "Nix Packages";
-            urls = [ { template = "https://search.nixos.org/packages?query={searchTerms}"; } ];
+            urls = [{template = "https://search.nixos.org/packages?query={searchTerms}";}];
           };
           nixos-wiki = {
             name = "NixOS Wiki";
-            urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
+            urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
           };
         };
       };

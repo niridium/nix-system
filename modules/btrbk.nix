@@ -1,11 +1,14 @@
-{ pkgs, username, ... }:
 {
+  pkgs,
+  username,
+  ...
+}: {
   users.users."btrbk" = {
     isNormalUser = false;
-    extraGroups = [ "wheel" "btrbk" ];
+    extraGroups = ["wheel" "btrbk"];
   };
   services.btrbk = {
-    extraPackages = [ pkgs.sudo ];
+    extraPackages = [pkgs.sudo];
     instances."remote_licher" = {
       onCalendar = "daily";
       settings = {
