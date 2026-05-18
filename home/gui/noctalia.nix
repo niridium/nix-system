@@ -94,7 +94,7 @@
         screenOverrides = [];
       };
       general = {
-        avatarImage = "/home/nixy/Pictures/Wallpapers/wallhaven_135vw3.jpg";
+        avatarImage = "/home/nixy/Pictures/Wallpapers/wallhaven_we2kkx.jpg";
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
@@ -500,7 +500,7 @@
         schedulingMode = "location";
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        generationMethod = "content";
+        generationMethod = "faithful";
         monitorForColors = "";
       };
       templates = {
