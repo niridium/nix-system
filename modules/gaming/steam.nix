@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{inputs, ...}: {
   nixpkgs.overlays = [inputs.millennium.overlays.default];
   programs.steam = {
     enable = true;

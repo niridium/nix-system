@@ -1,8 +1,4 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{pkgs, ...}: {
   users.users."btrbk" = {
     isNormalUser = false;
     extraGroups = ["wheel" "btrbk"];

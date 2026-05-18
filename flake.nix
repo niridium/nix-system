@@ -46,15 +46,10 @@
   outputs = inputs @ {
     nixpkgs,
     disko,
-    impermanence,
     home-manager,
-    noctalia,
     niri,
     nix-index-database,
     agenix,
-    arkenfox,
-    direnv-instant,
-    self,
     ...
   }: {
     # devShells.x86_64-linux = {
