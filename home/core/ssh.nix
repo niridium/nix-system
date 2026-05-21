@@ -3,7 +3,7 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "licher" = {
         hostname = "100.75.222.43";
         user = "nixy";
