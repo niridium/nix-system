@@ -25,7 +25,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     millennium.url = "github:SteamClientHomebrew/Millennium/e2c66a2?dir=packages/nix";
+
+    hermes-agent.url = "github:NousResearch/hermes-agent";
 
     # System Tools
     nix-index-database = {
@@ -50,6 +53,7 @@
     niri,
     nix-index-database,
     agenix,
+    hermes-agent,
     ...
   }: {
     # devShells.x86_64-linux = {
@@ -91,6 +95,7 @@
             disko.nixosModules.disko
             nix-index-database.nixosModules.default
             agenix.nixosModules.default
+            hermes-agent.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -121,6 +126,7 @@
             ./hosts/licher
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
+            hermes-agent.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

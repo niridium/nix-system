@@ -12,6 +12,7 @@
     ../../modules/services/redlib.nix
     ../../modules/services/actual.nix
     ../../modules/services/navidrome.nix
+    ../../modules/services/hermes-agent.nix
     ../../modules/tailscale.nix
     ../../modules/wakeonlan.nix
     ../../modules/remote_builder.nix
