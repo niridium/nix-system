@@ -125,6 +125,7 @@
           modules = [
             ./hosts/licher
             disko.nixosModules.disko
+            agenix.nixosModules.default
             home-manager.nixosModules.home-manager
             hermes-agent.nixosModules.default
             {
@@ -133,6 +134,7 @@
               home-manager.users.${username} = ./home/hosts/licher.nix;
               home-manager.extraSpecialArgs = {inherit inputs;};
               home-manager.backupFileExtension = "bkp";
+              age.identityPaths = ["/home/nixy/.ssh/key"];
             }
           ];
         };
