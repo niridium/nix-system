@@ -6,7 +6,7 @@
     ../tui/beets.nix
     ../gui
     ../browsers/firefox.nix
-    ../browsers/ladybird.nix
+    # ../browsers/ladybird.nix
     ../editors/zed-editor.nix
     ../gaming/factorio.nix
   ];
