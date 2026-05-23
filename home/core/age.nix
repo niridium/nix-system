@@ -6,6 +6,6 @@
     inputs.agenix.packages.x86_64-linux.default
   ];
   age = {
-    identityPaths = ["~/.ssh/key"];
+    identityPaths = ["/home/nixy/.ssh/key"];
   };
 }

@@ -4,4 +4,5 @@ let
 in {
   "factorio_token.age".publicKeys = [vega];
   "hermes-env.age".publicKeys = [vega licher];
+  "opencode-web.age".publicKeys = [licher];
 }
