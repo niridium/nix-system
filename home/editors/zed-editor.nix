@@ -1,7 +1,10 @@
 {
   programs.zed-editor = {
     enable = true;
-    extensions = [];
+    defaultEditor = true;
+    extensions = [
+      "opencode"
+    ];
     userSettings = {
       autosave = "on_focus_change";
       bottom_dock_layout = "full";
