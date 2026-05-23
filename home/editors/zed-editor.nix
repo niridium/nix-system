@@ -4,6 +4,7 @@
     defaultEditor = true;
     extensions = [
       "opencode"
+      "catppuccin-icons"
     ];
     userSettings = {
       autosave = "on_focus_change";
@@ -53,6 +54,12 @@
       git_panel = {
         dock = "right";
         tree_view = true;
+      };
+
+      icon_theme = {
+        mode = "system";
+        light = "Catppuccin Latte";
+        dark = "Catppuccin Macchiato";
       };
 
       indent_guides = {
