@@ -3,6 +3,7 @@
   services.hermes-agent = {
     enable = true;
     environmentFiles = [config.age.secrets."hermes-env".path];
+    stateDir = "/storage/hermes-agent";
     addToSystemPackages = true;
 
     settings = {

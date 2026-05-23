@@ -5,6 +5,9 @@
 }: {
   programs.ghostty = {
     enable = true;
-    settings.theme = lib.mkIf config.programs.noctalia-shell.enable "noctalia";
+    settings = {
+      theme = lib.mkIf config.programs.noctalia-shell.enable "noctalia";
+      font-family = "Iosevka Nerd Font Mono";
+    };
   };
 }
