@@ -1,7 +1,9 @@
-{
+{inputs, ...}: {
   system.stateVersion = "25.11";
   imports = [
+    inputs.nix-index-database.nixosModules.default
     ./hardware-configuration.nix
+    ../../modules/home-manager.nix
     ../../modules/core
     ../../modules/tui
     ../../modules/gui
@@ -10,7 +12,6 @@
     ../../modules/wireless.nix
     ../../modules/laptop.nix
     ../../modules/tailscale.nix
-    # ../../modules/gaming/factorio_login.nix
     ../../modules/gaming/steam.nix
     ../../modules/distributed-builds.nix
   ];

@@ -2,6 +2,7 @@
   system.stateVersion = "25.11";
   imports = [
     ./hardware-configuration.nix
+    ../../modules/home-manager.nix
     ../../modules/core
     ../../modules/tui
     ../../modules/filesystem
@@ -12,7 +13,6 @@
     ../../modules/services/redlib.nix
     ../../modules/services/actual.nix
     ../../modules/services/navidrome.nix
-    ../../modules/services/hermes-agent.nix
     ../../modules/tailscale.nix
     ../../modules/wakeonlan.nix
     ../../modules/remote_builder.nix
