@@ -17,12 +17,19 @@
     ../../modules/wakeonlan.nix
     ../../modules/remote_builder.nix
   ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   fileSystems."/storage" = {
     device = "/dev/md127";
     fsType = "btrfs";
     mountPoint = "/storage";
     options = ["compress=zstd"];
   };
+
   services.beesd.filesystems.storage = {
     spec = "/storage";
     hashTableSizeMB = 512;

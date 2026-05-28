@@ -72,7 +72,7 @@
 
       language_models = {
         ollama = {
-          context_window = 30000;
+          context_window = 64000;
           api_url = "https://ollama.sole-alkaid.ts.net";
         };
       };
