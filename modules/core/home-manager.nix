@@ -6,7 +6,7 @@
 }: {
   imports = [inputs.home-manager.nixosModules.home-manager];
   home-manager = {
-    users.${username} = ../home/hosts/${hostname}.nix;
+    users.${username} = ../../home/hosts/${hostname}.nix;
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};

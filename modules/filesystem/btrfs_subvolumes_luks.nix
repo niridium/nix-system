@@ -1,4 +1,11 @@
-{systemdisk, ...}: {
+{
+  systemdisk,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.disko.nixosModules.disko
+  ];
   services = {
     btrfs.autoScrub = {
       enable = true;

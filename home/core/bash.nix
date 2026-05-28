@@ -6,7 +6,6 @@
       nixos-build = "nh os build --max-jobs 8 ~/nix-system/";
       nixos-build-update = "nh os build --no-update-lock-file --max-jobs 8 --update ~/nix-system/";
       ls = "eza";
-      nix-search = "nix run nixpkgs#nix-search-cli -- -dr";
     };
     bashrcExtra = ''
       # Check package version from store

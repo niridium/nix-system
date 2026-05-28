@@ -2,19 +2,20 @@
   system.stateVersion = "25.11";
   imports = [
     ./hardware-configuration.nix
-    ../../modules/home-manager.nix
+
     ../../modules/core
-    ../../modules/tui
-    ../../modules/filesystem
+
     ../../modules/filesystem/btrfs_subvolumes.nix
+    ../../modules/filesystem/swap.nix
     ../../modules/filesystem/swraid.nix
-    ../../modules/services/openssh.nix
-    ../../modules/services/immich.nix
-    ../../modules/services/redlib.nix
+
     ../../modules/services/actual.nix
+    ../../modules/services/immich.nix
     ../../modules/services/navidrome.nix
+    ../../modules/services/openssh.nix
+
     ../../modules/tailscale.nix
-    ../../modules/wakeonlan.nix
+
     ../../modules/remote_builder.nix
   ];
 

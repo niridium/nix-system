@@ -9,8 +9,7 @@
   home.packages = [
     pkgs.nautilus
     pkgs.ddcutil
-    pkgs.loupe
-    pkgs.showtime
+    pkgs.imv
     pkgs.mpv
     pkgs.tutanota-desktop
     pkgs.gelly
