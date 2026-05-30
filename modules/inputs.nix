@@ -1,22 +1,20 @@
 {
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
-  # {
-  #   imports = [
-  #     ./hosts/vega/vega.nix
-  #     ./hosts/licher/licher.nix
-  #   ];
-  #   systems = ["x86_64-linux"];
-  #   perSystem = {};
-  #   flake = {};
-  # };
-
-  inputs = {
+  inputs,
+  lib,
+  ...
+}: {
+  imports = [
+    inputs.flake-file.flakeModules.default
+  ];
+  flake-file.outputs = "flake-parts";
+  flake-file.inputs = {
     agenix.url = "github:ryantm/agenix";
     arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
     direnv-instant.url = "github:Mic92/direnv-instant";
+    flake-file.url = lib.mkDefault "github:vic/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";
     hermes-agent.url = "github:NousResearch/hermes-agent";
-    import-tree.url = "github:denful/import-tree";
+    # import-tree.url = "github:denful/import-tree";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     disko = {
