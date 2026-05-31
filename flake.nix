@@ -1,14 +1,5 @@
 {
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
-  # {
-  #   imports = [
-  #     ./hosts/vega/vega.nix
-  #     ./hosts/licher/licher.nix
-  #   ];
-  #   systems = ["x86_64-linux"];
-  #   perSystem = {};
-  #   flake = {};
-  # };
 
   inputs = {
     agenix.url = "github:ryantm/agenix";
