@@ -4,7 +4,7 @@
     default = {};
   };
   config.flake.factory.hostname = hostname: {
-    nixos.base = {
+    nixos."${hostname}Network" = {
       networking.hostName = "${hostname}";
     };
   };

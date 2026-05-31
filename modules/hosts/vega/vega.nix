@@ -12,20 +12,20 @@
     #--------------------------------------
     nixosConfigurations.vega = inputs.nixpkgs.lib.nixosSystem {
       modules = with inputs.self.modules.nixos; [
-        #-----------
+        #---Core------------------
+        vegaNetwork #From Factory
         vegaHardware
         vegaDisko
         base
-        #-----------
+        #---One mandatory user----
+        nixy
+        #-------------------------
         gui
         gaming
         laptop
         tailscale
         wireless
         consumer
-        #---One mandatory user---
-        nixy
-        #------------------------
       ];
     };
     # homeConfigurations.vega = inputs.home-manager.lib.homeManagerConfiguration {
