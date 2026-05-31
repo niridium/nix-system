@@ -28,6 +28,14 @@
         tailscale
         builder
         headlessGraphics
+        {
+          home-manager.users.nixy = {
+            imports = with inputs.self.modules.homeManager; [
+              beets
+              ollama
+            ];
+          };
+        }
       ];
     };
   };

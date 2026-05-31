@@ -21,16 +21,27 @@
         nixy
         #-------------------------
         gui
-        gaming
         laptop
+        gaming
+
         tailscale
         wireless
         consumer
+        {
+          home-manager.users.nixy = {pkgs, ...}: {
+            imports = with inputs.self.modules.homeManager; [
+              browser
+              zedEditor
+              beets
+              gaming
+            ];
+            home.packages = [
+              pkgs.handbrake
+              pkgs.immich-cli
+            ];
+          };
+        }
       ];
     };
-    # homeConfigurations.vega = inputs.home-manager.lib.homeManagerConfiguration {
-    #   modules = with inputs.self.modules.homeManager; [
-    #   ];
-    # };
   };
 }

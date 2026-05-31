@@ -1,7 +1,7 @@
 {inputs, ...}: {
   flake.modules.nixos.base = {
     imports = [
-      inputs.home-manager.nixosModules.home-manager
+      inputs.nix-index-database.nixosModules.default
     ];
     system.stateVersion = "25.11";
 
@@ -32,6 +32,4 @@
       # sharedModules = [inputs.self.modules.homeManager.core];
     };
   };
-  # flake.modules.homeManager.core = {
-  # };
 }
