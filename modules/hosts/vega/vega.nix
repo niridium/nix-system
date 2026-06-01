@@ -18,7 +18,7 @@
         vegaDisko
         base
         #---One mandatory user----
-        nixy
+        nixyGui
         #-------------------------
         gui
         laptop
@@ -27,20 +27,6 @@
         tailscale
         wireless
         consumer
-        {
-          home-manager.users.nixy = {pkgs, ...}: {
-            imports = with inputs.self.modules.homeManager; [
-              browser
-              zedEditor
-              beets
-              gaming
-            ];
-            home.packages = [
-              pkgs.handbrake
-              pkgs.immich-cli
-            ];
-          };
-        }
       ];
     };
   };

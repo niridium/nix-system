@@ -1,6 +1,6 @@
 {self, ...}: {
-  config.flake.factory.user = username: {
-    nixos."${username}" = {
+  config.flake.factory.userBase = username: {
+    nixos."${username}Base" = {
       lib,
       config,
       ...
@@ -12,11 +12,12 @@
       services.greetd.settings.default_session.user = lib.mkIf config.services.greetd.enable "${username}";
       home-manager.users."${username}" = {
         imports = [
-          self.modules.homeManager."${username}"
+          self.modules.homeManager.base
+          self.modules.homeManager."${username}Base"
         ];
       };
     };
-    homeManager."${username}" = {
+    homeManager."${username}Base" = {
       home.username = "${username}";
     };
   };
