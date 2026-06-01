@@ -1,10 +1,6 @@
 {
   flake.modules.homeManager.base = {
-    home = {
-      username = "nixy";
-      homeDirectory = "/home/nixy";
-      stateVersion = "25.11";
-    };
+    home.stateVersion = "25.11";
     xdg.autostart.enable = true;
     programs = {
       home-manager.enable = true;
