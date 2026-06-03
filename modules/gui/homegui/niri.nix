@@ -4,11 +4,19 @@
     programs.niri = {
       enable = true;
       package = pkgs.niri;
+      # config = ''
+      #   window-rule {
+      #     background-effect {
+      #       blur true
+      #       xray false
+      #     }
+      #   }
+      # '';
       settings = {
         spawn-at-startup = [
           {
             command = [
-              "noctalia-shell"
+              "noctalia"
             ];
           }
         ];
@@ -40,11 +48,12 @@
             focus-at-startup = true;
           };
         };
+
         window-rules = [
           {
             clip-to-geometry = true;
             geometry-corner-radius = let
-              r = 8.;
+              r = 10.;
             in {
               top-left = r;
               top-right = r;
@@ -83,6 +92,7 @@
           };
         };
 
+        debug.honor-xdg-activation-with-invalid-serial = true;
         prefer-no-csd = true;
         hotkey-overlay.skip-at-startup = true;
 
@@ -100,9 +110,9 @@
             repeat = false;
           };
         in {
-          "Mod+Space".action.spawn-sh = "noctalia-shell ipc call launcher toggle";
-          "Mod+S".action.spawn-sh = "noctalia-shell ipc call controlCenter toggle";
-          "Mod+Shift+G".action.spawn-sh = "noctalia-shell ipc call lockScreen lock";
+          "Mod+Space".action.spawn-sh = "noctalia msg panel-toggle launcher";
+          "Mod+S".action.spawn-sh = "noctalia msg panel-toggle control-center";
+          "Mod+Shift+G".action.spawn-sh = "noctalia msg session lock";
           "Mod+C" = noRepeat // {action.close-window = [];};
           "Mod+O" = noRepeat // {action.toggle-overview = [];};
           "Mod+Page_Down".action.focus-workspace-down = [];
@@ -128,83 +138,68 @@
           "Mod+V".action.toggle-window-floating = [];
           "XF86AudioRaiseVolume" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "volume"
-              "increase"
+              "noctalia"
+              "msg"
+              "volume-up"
             ]
           );
           "XF86AudioLowerVolume" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "volume"
-              "decrease"
+              "noctalia"
+              "msg"
+              "volume-down"
             ]
           );
           "XF86AudioPlay" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
+              "noctalia"
+              "msg"
               "media"
-              "playPause"
+              "toggle"
             ]
           );
           "XF86AudioNext" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
+              "noctalia"
+              "msg"
               "media"
               "next"
             ]
           );
           "XF86AudioPrev" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
+              "noctalia"
+              "msg"
               "media"
               "previous"
             ]
           );
           "XF86AudioMute" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "volume"
-              "muteOutput"
+              "noctalia"
+              "msg"
+              "volume-mute"
             ]
           );
           "XF86AudioMicMute" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "volume"
-              "muteInput"
+              "noctalia"
+              "msg"
+              "mic-mute"
             ]
           );
           "XF86MonBrightnessUp" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "brightness"
-              "increase"
+              "noctalia"
+              "msg"
+              "brightness-up"
             ]
           );
           "XF86MonBrightnessDown" = (
             spawnLocked [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "brightness"
-              "decrease"
+              "noctalia"
+              "msg"
+              "brightness-down"
             ]
           );
         };
