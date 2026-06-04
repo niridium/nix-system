@@ -2,7 +2,7 @@
   flake.modules.homeManager.base = {
     programs.nh = {
       enable = true;
-      osFlake = "~/nix-system/flake.nix";
+      osFlake = /home/nixy/nix-system;
       clean = {
         enable = true;
         dates = "weekly";

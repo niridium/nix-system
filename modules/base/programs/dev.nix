@@ -1,9 +1,5 @@
-{inputs, ...}: {
+{
   flake.modules.homeManager.base = {pkgs, ...}: {
-    imports = [
-      inputs.direnv-instant.homeModules.direnv-instant
-    ];
-
     # Devenv
     home.packages = [
       pkgs.devenv

@@ -2,11 +2,9 @@
   flake.modules.homeManager.base = {
     config,
     lib,
-    inputs,
     ...
   }: {
     imports = [
-      inputs.noctalia.homeModules.default
     ];
     programs.ghostty = {
       enable = true;
