@@ -1,8 +1,8 @@
 {
   flake.modules.homeManager.beets = {
-    programs.bash.bashrcExtra = ''
-      eval "$(beet completion)"
-    '';
+    # programs.bash.bashrcExtra = ''
+    #   eval "$(beet completion)"
+    # '';
     programs.beets = {
       enable = true;
       settings = {
