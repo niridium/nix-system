@@ -20,6 +20,7 @@
         nixyServer
         #---Services---------------
         actualBudget
+        dawarich
         immich
         navidrome
         openssh
