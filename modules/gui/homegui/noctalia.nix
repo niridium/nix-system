@@ -1,8 +1,5 @@
 {
   flake.modules.homeManager.gui = {
-    # imports = [
-    #   inputs.noctalia.homeModules.default
-    # ];
     programs.noctalia = {
       enable = true;
       settings = {
@@ -12,14 +9,16 @@
         bar = {
           order = ["widgets"];
           widgets = {
-            border_width = 3.0;
+            border_width = 4.0;
             center = ["workspaces"];
             contact_shadow = true;
-            end = ["tray" "notifications" "clipboard" "volume" "brightness" "bluetooth" "network" "battery"];
+            end = ["tray" "notifications" "clipboard" "brightness" "volume" "bluetooth" "network" "battery"];
+            margin_edge = 4;
+            margin_ends = 4;
             position = "left";
-            radius = 10;
+            radius = 14;
             scale = 1.1;
-            start = ["weather"];
+            start = ["clock" "date" "weather"];
             thickness = 40;
             widget_spacing = 15;
           };
