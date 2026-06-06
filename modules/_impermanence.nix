@@ -1,4 +1,10 @@
 {
+  flake-file.inputs = {
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
   flake.modules.nixos.impermanence = {
     fileSystems."/persistent".neededForBoot = true;
     users.mutableUsers = false;

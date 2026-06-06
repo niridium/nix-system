@@ -1,4 +1,5 @@
 {inputs, ...}: {
+  flake-file.inputs.arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
   flake.modules.homeManager.firefoxBrowser = {config, ...}: {
     imports = [inputs.arkenfox.hmModules.arkenfox];
     programs.firefox = {

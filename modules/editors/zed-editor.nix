@@ -138,6 +138,7 @@
             formatter = {
               external = {
                 command = "alejandra";
+                arguments = ["--exclude flake.nix"];
               };
             };
           };
