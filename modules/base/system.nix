@@ -1,9 +1,6 @@
 {inputs, ...}: {
   flake.modules = {
     nixos.base = {pkgs, ...}: {
-      # imports = [
-      #   inputs.self.modules.nixos.nixConfig
-      # ];
       system.stateVersion = "25.11";
       #---Boot-------------------------------------
       boot = {
@@ -13,7 +10,7 @@
           efi.canTouchEfiVariables = true;
         };
       };
-      #---Networking-------------------------------
+      #---Networking-------------
       networking = {
         useDHCP = false;
         dhcpcd.enable = false;
@@ -36,7 +33,7 @@
           LC_MESSAGES = "en_US.UTF-8";
         };
       };
-      #---OOM--------------------------------
+      #---OOM--------------------------
       systemd.oomd.enable = false;
       services = {
         systembus-notify.enable = true;
@@ -58,14 +55,14 @@
         "zswap.max_pool_percent=20"
         "zswap.shrinker_enabled=1"
       ];
-      #-------------------------------------
+      #--------------------------------
       services = {
         #---Power Management----------------
         power-profiles-daemon.enable = true;
-        #---Firmware------------------------
+        #---Firmware--------
         fwupd.enable = true;
       };
-      #---Audio---------------------------
+      #---Audio-----------------------
       services.pipewire.enable = true;
       security.rtkit.enable = true;
       #---Fonts------------------------------
@@ -85,13 +82,21 @@
       age = {
         identityPaths = ["/home/nixy/.ssh/key"];
       };
-      #---Bash-------------------------------------
+      #---Bash----------
       programs.bash = {
         enable = true;
         shellAliases = {
           ls = "eza";
         };
       };
+      #---Programs with no custom config---
+      programs = {
+        starship.enable = true;
+        zoxide.enable = true;
+        fzf.enable = true;
+        fastfetch.enable = true;
+      };
+      #-------------------------
     };
   };
 }

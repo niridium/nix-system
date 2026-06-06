@@ -1,17 +1,8 @@
-{inputs, ...}: {
+{
   flake.modules.homeManager.gui = {pkgs, ...}: {
-    imports = [inputs.niri.homeModules.niri];
     programs.niri = {
       enable = true;
       package = pkgs.niri;
-      # config = ''
-      #   window-rule {
-      #     background-effect {
-      #       blur true
-      #       xray false
-      #     }
-      #   }
-      # '';
       settings = {
         spawn-at-startup = [
           {
