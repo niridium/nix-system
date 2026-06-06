@@ -4,8 +4,6 @@
     lib,
     ...
   }: {
-    imports = [
-    ];
     programs.ghostty = {
       enable = true;
       settings = {

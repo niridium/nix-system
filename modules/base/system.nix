@@ -1,6 +1,9 @@
 {inputs, ...}: {
   flake.modules = {
     nixos.base = {pkgs, ...}: {
+      # imports = [
+      #   inputs.self.modules.nixos.nixConfig
+      # ];
       system.stateVersion = "25.11";
       #---Boot-------------------------------------
       boot = {

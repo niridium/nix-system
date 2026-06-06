@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.homeManager.browser = {config, ...}: {
+  flake.modules.homeManager.firefoxBrowser = {config, ...}: {
     imports = [inputs.arkenfox.hmModules.arkenfox];
     programs.firefox = {
       enable = true;
