@@ -6,6 +6,7 @@
     arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
     direnv-instant.url = "github:Mic92/direnv-instant";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    helium-nix.url = "github:penal-colony/helium-nix";
     hermes-agent.url = "github:NousResearch/hermes-agent";
     import-tree.url = "github:denful/import-tree";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

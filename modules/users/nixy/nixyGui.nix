@@ -8,7 +8,8 @@
         gui
 
         #---Extra Modules---
-        browser
+        firefoxBrowser
+        # heliumBrowser
         zedEditor
         beets
         gaming
