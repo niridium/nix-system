@@ -7,43 +7,8 @@
     #   })
     # ];
     fileSystems."/" = {
-      # options = ["compress=zstd"];
       neededForBoot = true;
     };
-    # services = {
-    #   btrfs.autoScrub = {
-    #     enable = true;
-    #   };
-    #   beesd.filesystems = {
-    #     root = {
-    #       spec = "/";
-    #       hashTableSizeMB = 512;
-    #       verbosity = "info";
-    #       extraOptions = [
-    #         "--loadavg-target"
-    #         "5.0"
-    #       ];
-    #     };
-    #     storage = {
-    #       spec = "/storage";
-    #       hashTableSizeMB = 512;
-    #       extraOptions = [
-    #         "--loadavg-target"
-    #         "5.0"
-    #       ];
-    #     };
-    #   };
-    # };
-    # fileSystems."/" = {
-    #   options = ["compress=zstd"];
-    #   neededForBoot = true;
-    # };
-    # fileSystems."/storage" = {
-    #   device = "/dev/md127";
-    #   fsType = "btrfs";
-    #   mountPoint = "/storage";
-    #   options = ["compress=zstd"];
-    # };
     disko.devices = {
       disk = {
         main = {

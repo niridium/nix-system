@@ -1,15 +1,9 @@
 {
   inputs,
   self,
-  # lib,
   ...
 }: {
   flake = {
-    # #---Setup hostname-----------------------
-    # modules = lib.mkMerge [
-    #   (self.factory.network {hostname = "licher";})
-    # ];
-    # #----------------------------------------
     nixosConfigurations.licher = inputs.nixpkgs.lib.nixosSystem {
       modules = with self.modules.nixos;
       with self.factory;
@@ -17,7 +11,7 @@
         #---Core-------------------
         (fs.btrfs {systemDevice = "/dev/sdc";})
         (swap {swapAmount = 8;})
-        (network {hostname = "licher";}) # licherNetwork #From Factory
+        (network {hostname = "licher";})
         (mount {
           device = "/dev/md127";
           label = "storage";
@@ -25,7 +19,6 @@
           format = "btrfs";
         })
         licherHardware
-        # licherDisko
         base
         #---One mandatory user-----
         nixyServer

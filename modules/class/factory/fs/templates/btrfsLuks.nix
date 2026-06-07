@@ -5,22 +5,8 @@
         name = "root";
         mountPoint = "/";
       })
-    ]; # services = {
-    #   btrfs.autoScrub = {
-    #     enable = true;
-    #   };
-    #   beesd.filesystems.root = {
-    #     spec = "/";
-    #     hashTableSizeMB = 512;
-    #     verbosity = "info";
-    #     extraOptions = [
-    #       "--loadavg-target"
-    #       "5.0"
-    #     ];
-    #   };
-    # };
+    ];
     fileSystems."/" = {
-      # options = ["compress=zstd"];
       neededForBoot = true;
     };
     disko.devices = {
