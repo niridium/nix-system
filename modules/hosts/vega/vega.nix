@@ -1,21 +1,26 @@
 {
   inputs,
-  lib,
+  self,
+  # lib,
   ...
 }: {
   flake = {
     #---Setup hostname---------------------
-    modules = lib.mkMerge [
-      (inputs.self.factory.hostname "vega")
-      # (inputs.self.factory.swapspace "8")
-    ];
+    # modules = lib.mkMerge [
+    #   (self.factory.network {hostname = "vega";})
+    #   # (inputs.self.factory.swapspace "8")
+    # ];
     #--------------------------------------
     nixosConfigurations.vega = inputs.nixpkgs.lib.nixosSystem {
-      modules = with inputs.self.modules.nixos; [
+      modules = with self.modules.nixos;
+      with self.factory; [
         #---Core------------------
-        vegaNetwork #From Factory
+        (fs.btrfsLuks {systemDevice = "/dev/nvme0n1";})
+        (swap {swapAmount = 8;})
+        (network {hostname = "vega";})
+        # vegaNetwork #From Factory
         vegaHardware
-        vegaDisko
+        # vegaDisko
         base
         #---One mandatory user----
         nixyGui

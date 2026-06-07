@@ -21,6 +21,7 @@
       imports = [
         nix-index-database.nixosModules.default
         home-manager.nixosModules.home-manager
+        inputs.disko.nixosModules.disko
         self.modules.nixos.nixConfig
       ];
     };
