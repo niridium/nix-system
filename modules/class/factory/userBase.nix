@@ -1,5 +1,5 @@
 {self, ...}: {
-  config.flake.factory.userBase = username: {
+  config.flake.factory.userBase = {username}: {
     nixos."${username}Base" = {
       lib,
       config,

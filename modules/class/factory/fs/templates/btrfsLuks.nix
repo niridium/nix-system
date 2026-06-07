@@ -1,31 +1,33 @@
-{inputs, ...}: {
-  flake.modules.nixos.vegaDisko = {
+{self, ...}: {
+  config.flake.factory.fs.btrfsLuks = {systemDevice}: {
     imports = [
-      inputs.disko.nixosModules.disko
-    ];
-    services = {
-      btrfs.autoScrub = {
-        enable = true;
-      };
-      beesd.filesystems.root = {
-        spec = "/";
-        hashTableSizeMB = 512;
-        verbosity = "info";
-        extraOptions = [
-          "--loadavg-target"
-          "5.0"
-        ];
-      };
-    };
+      (self.factory.fs.btrfsMaintenance {
+        name = "root";
+        mountPoint = "/";
+      })
+    ]; # services = {
+    #   btrfs.autoScrub = {
+    #     enable = true;
+    #   };
+    #   beesd.filesystems.root = {
+    #     spec = "/";
+    #     hashTableSizeMB = 512;
+    #     verbosity = "info";
+    #     extraOptions = [
+    #       "--loadavg-target"
+    #       "5.0"
+    #     ];
+    #   };
+    # };
     fileSystems."/" = {
-      options = ["compress=zstd"];
+      # options = ["compress=zstd"];
       neededForBoot = true;
     };
     disko.devices = {
       disk = {
         main = {
           type = "disk";
-          device = /dev/nvme0n1;
+          device = "${systemDevice}";
           content = {
             type = "gpt";
             partitions = {
@@ -50,7 +52,10 @@
                     extraArgs = ["-f"];
                     mountpoint = "/";
                     subvolumes = {
-                      "/rootfs".mountpoint = "/";
+                      "/rootfs" = {
+                        mountpoint = "/";
+                        mountOptions = ["compress=zstd"];
+                      };
                       "/persistent".mountpoint = "/persistent";
                       "/nix".mountpoint = "/nix";
                     };
