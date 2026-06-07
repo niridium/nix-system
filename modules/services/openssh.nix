@@ -1,11 +1,13 @@
 {
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-      AllowUsers = ["nixy"];
+  flake.modules.nixos.openssh = {
+    services.openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+        AllowUsers = ["nixy"];
+      };
     };
   };
 }

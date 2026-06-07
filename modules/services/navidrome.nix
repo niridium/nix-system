@@ -1,14 +1,16 @@
-{serverdirectory, ...}: {
-  services.navidrome = {
-    enable = true;
-    settings = {
-      MusicFolder = "${serverdirectory}/Backups/vega/Music";
+{
+  flake.modules.nixos.navidrome = {
+    services.navidrome = {
+      enable = true;
+      settings = {
+        MusicFolder = "/storage/Backups/vega/Music";
 
-      EnableInsightsCollector = true;
+        EnableInsightsCollector = true;
 
-      Backup.Path = "${serverdirectory}/Backups/licher/Navidrome";
-      Backup.Schedule = "0 0 * * *";
-      Backup.Count = 7;
+        Backup.Path = "/storage/Backups/licher/Navidrome";
+        Backup.Schedule = "0 0 * * *";
+        Backup.Count = 7;
+      };
     };
   };
 }

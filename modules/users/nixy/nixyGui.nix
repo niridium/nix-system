@@ -1,0 +1,23 @@
+{self, ...}: {
+  flake.modules.nixos.nixyGui = {
+    imports = with self.modules.nixos; [
+      nixyBase
+    ];
+    home-manager.users.nixy = {pkgs, ...}: {
+      imports = with self.modules.homeManager; [
+        gui
+
+        #---Extra Modules---
+        firefoxBrowser
+        # heliumBrowser
+        zedEditor
+        beets
+        gaming
+      ];
+      home.packages = [
+        pkgs.handbrake
+        pkgs.immich-cli
+      ];
+    };
+  };
+}

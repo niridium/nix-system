@@ -8,7 +8,10 @@
 
   git-hooks = {
     hooks = {
-      alejandra.enable = true;
+      alejandra = {
+        enable = true;
+        settings.exclude = ["flake.nix"];
+      };
       deadnix.enable = true;
 
       git-conventional-commits = {
