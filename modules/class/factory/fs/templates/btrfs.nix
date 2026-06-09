@@ -1,11 +1,11 @@
-{
+{self, ...}: {
   config.flake.factory.fs.btrfs = {systemDevice}: {
-    # imports = [
-    #   (self.factory.fs.btrfsMaintenance {
-    #     name = "root";
-    #     mountPoint = "/";
-    #   })
-    # ];
+    imports = [
+      (self.factory.fs.btrfsMaintenance {
+        name = "root";
+        mountPoint = "/";
+      })
+    ];
     fileSystems."/" = {
       neededForBoot = true;
     };
