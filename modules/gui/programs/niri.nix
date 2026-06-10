@@ -127,72 +127,54 @@
           "Mod+Ctrl+R".action.reset-window-height = [];
           "Mod+F".action.maximize-column = [];
           "Mod+V".action.toggle-window-floating = [];
-          "XF86AudioRaiseVolume" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "volume-up"
-            ]
-          );
-          "XF86AudioLowerVolume" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "volume-down"
-            ]
-          );
-          "XF86AudioPlay" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "media"
-              "toggle"
-            ]
-          );
-          "XF86AudioNext" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "media"
-              "next"
-            ]
-          );
-          "XF86AudioPrev" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "media"
-              "previous"
-            ]
-          );
-          "XF86AudioMute" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "volume-mute"
-            ]
-          );
-          "XF86AudioMicMute" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "mic-mute"
-            ]
-          );
-          "XF86MonBrightnessUp" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "brightness-up"
-            ]
-          );
-          "XF86MonBrightnessDown" = (
-            spawnLocked [
-              "noctalia"
-              "msg"
-              "brightness-down"
-            ]
-          );
+          "XF86AudioRaiseVolume" = spawnLocked [
+            "noctalia"
+            "msg"
+            "volume-up"
+          ];
+          "XF86AudioLowerVolume" = spawnLocked [
+            "noctalia"
+            "msg"
+            "volume-down"
+          ];
+          "XF86AudioPlay" = spawnLocked [
+            "noctalia"
+            "msg"
+            "media"
+            "toggle"
+          ];
+          "XF86AudioNext" = spawnLocked [
+            "noctalia"
+            "msg"
+            "media"
+            "next"
+          ];
+          "XF86AudioPrev" = spawnLocked [
+            "noctalia"
+            "msg"
+            "media"
+            "previous"
+          ];
+          "XF86AudioMute" = spawnLocked [
+            "noctalia"
+            "msg"
+            "volume-mute"
+          ];
+          "XF86AudioMicMute" = spawnLocked [
+            "noctalia"
+            "msg"
+            "mic-mute"
+          ];
+          "XF86MonBrightnessUp" = spawnLocked [
+            "noctalia"
+            "msg"
+            "brightness-up"
+          ];
+          "XF86MonBrightnessDown" = spawnLocked [
+            "noctalia"
+            "msg"
+            "brightness-down"
+          ];
         };
       };
     };

@@ -13,6 +13,7 @@
         settings.exclude = ["flake.nix"];
       };
       deadnix.enable = true;
+      statix.enable = true;
 
       git-conventional-commits = {
         enable = true;
