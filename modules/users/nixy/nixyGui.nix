@@ -9,7 +9,7 @@
 
         #---Extra Modules---
         firefoxBrowser
-        # heliumBrowser
+        heliumBrowser
         zedEditor
         beets
         gaming
