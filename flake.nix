@@ -11,6 +11,7 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox.url = "github:nix-community/flake-firefox-nightly";
     flake-file.url = "github:vic/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";
     helium.url = "github:penal-colony/helium-nix";

@@ -1,15 +1,29 @@
 {inputs, ...}: {
-  flake-file.inputs.arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
-  flake.modules.homeManager.firefoxBrowser = {config, ...}: {
+  flake-file.inputs = {
+    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
+    firefox.url = "github:nix-community/flake-firefox-nightly";
+  };
+  flake.modules.homeManager.firefoxBrowser = {
+    config,
+    pkgs,
+    ...
+  }: {
     imports = [inputs.arkenfox.hmModules.arkenfox];
     programs.firefox = {
       enable = true;
+      package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-beta-bin;
       configPath = "${config.xdg.configHome}/mozilla/firefox";
       arkenfox = {
         enable = true;
         version = "140.1";
       };
+      profiles.test = {
+        isDefault = false;
+        id = 1;
+      };
       profiles.default = {
+        isDefault = true;
+        id = 0;
         arkenfox = {
           enable = true;
           "0100" = {
