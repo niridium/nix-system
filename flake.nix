@@ -5,7 +5,10 @@
 
   inputs = {
     agenix.url = "github:ryantm/agenix";
-    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
+    betterfox = {
+      url = "github:yokoffing/Betterfox";
+      flake = false;
+    };
     direnv-instant.url = "github:Mic92/direnv-instant";
     disko = {
       url = "github:nix-community/disko/latest";
