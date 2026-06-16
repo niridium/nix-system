@@ -9,16 +9,19 @@
         bar = {
           order = ["widgets"];
           widgets = {
+            background_opacity = 0.7;
             border_width = 4.0;
-            center = ["workspaces"];
+            center = ["clock"];
+            font_weight = 300;
             contact_shadow = true;
             end = ["tray" "notifications" "clipboard" "brightness" "volume" "bluetooth" "network" "battery"];
             margin_edge = 4;
             margin_ends = 4;
-            position = "left";
+            position = "top";
             radius = 14;
             scale = 1.1;
-            start = ["clock" "date" "weather"];
+            shadow = false;
+            start = ["cpu" "ram" "weather"];
             thickness = 40;
             widget_spacing = 15;
           };
@@ -28,9 +31,7 @@
           sidebar = "full";
           sidebar_section = "none";
         };
-        desktop_widgets = {
-          enabled = false;
-        };
+        desktop_widgets.enabled = false;
         idle = {
           behavior_order = ["lock" "screen-off" "lock-and-suspend"];
           behavior = {
@@ -66,7 +67,9 @@
           position = "bottom_center";
         };
         shell = {
-          font_family = "Iosevka NF";
+          app_icon_colorize = true;
+          corner_radius_scale = 0.5;
+          font_family = "Iosevka NF Light";
           password_style = "random";
           polkit_agent = true;
           telemetry_enabled = true;
@@ -74,7 +77,7 @@
             clipboard_placement = "attached";
             launcher_categories = false;
             launcher_compact = true;
-            launcher_placement = "attached";
+            launcher_placement = "centered";
             launcher_show_icons = false;
             open_near_click_clipboard = true;
             open_near_click_control_center = true;
@@ -92,7 +95,7 @@
           wallpaper_scheme = "faithful";
           templates = {
             builtin_ids = ["btop" "cava" "gtk3" "gtk4" "ghostty" "helix" "niri" "qt"];
-            community_ids = ["zed" "yazi"];
+            community_ids = ["pywalfox" "zed" "yazi"];
           };
         };
         widget = {
@@ -102,10 +105,13 @@
             show_label = false;
           };
           brightness.show_label = false;
+          clock.format = "{:%d / %H:%M}";
+          cpu.display = "text";
           network.show_label = false;
           notifications.hide_when_no_unread = true;
+          ram.display = "text";
           volume.show_label = false;
-          workspaces.display = "none";
+          workspaces.minimal = true;
         };
       };
     };
