@@ -9,13 +9,20 @@
       flake = false;
     };
   };
-  flake.modules.homeManager.betterfox = with lib; {
+  flake.modules.homeManager.betterfox = {
     programs.firefox = {
-      policies = let
-        extensions = ["ublock-origin" "keepassxc-browser" "darkreader" "dearrow" "sponsorblock" "return-youtube-dislikes"];
-        install = extension: "https://addons.mozilla.org/firefox/downloads/latest/${extension}/latest.xpi";
-      in {
-        Extensions.Install = map install extensions;
+      policies = {
+        ExtensionsSettings = let
+          mozilla = name: "https://addons.mozilla.org/firefox/downloads/latest/${name}/latest.xpi";
+          force = {installation_mode = "force_installed";};
+        in {
+          "uBlock0@raymondhill.net" = force // {install_url = mozilla "ublock-origin";};
+          "addon@darkreader.org" = force // {install_url = mozilla "darkreader";};
+          "deArrow@ajay.app" = force // {install_url = mozilla "dearrow";};
+          "keepassxc-browser@keepassxc.org" = force // {install_url = mozilla "keepassxc-browser";};
+          "{762f9885-5a13-4abd-9c77-433dcd38b8fd}" = force // {install_url = mozilla "return-youtube-dislikes";};
+          "sponsorBlocker@ajay.app" = force // {install_url = mozilla "sponsorblock";};
+        };
         AppAutoUpdate = false;
         SearchEngines = {
           PreventInstalls = false;
@@ -27,7 +34,7 @@
           ];
         };
       };
-      profiles.betterfox = {
+      profiles.betterfox = with lib; {
         isDefault = true;
         id = 0;
         preConfig = readFile ./misc.js;
