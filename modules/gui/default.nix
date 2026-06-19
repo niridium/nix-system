@@ -23,7 +23,7 @@
       #---Packages with no custom config------
       home.packages = with pkgs; [
         localsend # Serverless file transfer
-        nautilus # File manager
+        kdePackages.dolphin # File manager
         ddcutil # Backlight control
         imv # Image viewer
         mpv # Video player
