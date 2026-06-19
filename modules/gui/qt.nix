@@ -2,8 +2,18 @@
   flake.modules.homeManager.gui = {
     qt = {
       enable = true;
-      platformTheme.name = "adwaita";
-      style.name = "adwaita";
+      platformTheme.name = "gtk3";
+      qt6ctSettings = {
+        Appearance = {
+          color_scheme_path = "/home/nixy/.config/qt6ct/colors/noctalia.conf";
+          custom_palette = true;
+          icon_theme = "Papirus";
+        };
+        Fonts = {
+          fixed = "\"Iosevka Nerd Font Mono,11\"";
+          general = "\"Iosevka Nerd Font,11\"";
+        };
+      };
     };
   };
 }
