@@ -1,14 +1,5 @@
 {
-  flake.modules.homeManager.base = {pkgs, ...}: {
-    # Devenv
-    home.packages = [
-      pkgs.devenv
-    ];
-    programs.bash.bashrcExtra = ''
-      eval "$(devenv hook bash)"
-    '';
-
-    # Direnv
+  flake.modules.homeManager.base = {
     programs = {
       direnv = {
         enable = true;
