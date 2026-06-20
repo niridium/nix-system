@@ -1,12 +1,13 @@
 spawn-at-startup "noctalia"
+include optional=true "noctalia.kdl"
 input {
     keyboard {
-        xkb {
-            layout "us"
-            model ""
-            rules ""
-            variant "colemak"
-        }
+        // xkb {
+        //     layout "us"
+        //     model ""
+        //     rules ""
+        //     variant "colemak"
+        // }
         repeat-delay 600
         repeat-rate 25
         track-layout "global"
@@ -27,57 +28,72 @@ output "eDP-1" {
     transform "normal"
     mode "1920x1200@60.003000"
 }
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+// screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
 window-rule {
-    geometry-corner-radius 10.0 10.0 10.0 10.0
+    geometry-corner-radius 10
     clip-to-geometry true
+    // background-effect {
+    //     blur true
+    //     xray false
+    // }
 }
+// blur {
+//     passes 2
+//     offset 3
+//     noise 0.03
+//     saturation 1.0
+// }
 layout {
-    gaps 8
-    struts {
-        left 0
-        right 0
-        top 0
-        bottom 0
-    }
+    gaps 4
+    // struts {
+    //     left 0
+    //     right 0
+    //     top 0
+    //     bottom 0
+    // }
     focus-ring {
-        width 4
-        urgent-color "#ba1a1a"
-        active-color "#635f4a"
-        inactive-color "#fdf8f5"
+        width 0
+        // urgent-color "#ba1a1a"
+        // active-color "#635f4a"
+        // inactive-color "#fdf8f5"
     }
     border {
-        off
+        width 4
+        // off
     }
-    tab-indicator {
-        gap 5.0
-        width 4.0
-        length total-proportion=0.5
-        position "left"
-        gaps-between-tabs 0.0
-        corner-radius 0.0
-        urgent-color "#ba1a1a"
-        active-color "#635f4a"
-        inactive-color "#eae2c9"
-    }
-    insert-hint {
-        color "635f4a80"
-    }
+    // tab-indicator {
+    //     gap 5.0
+    //     width 4.0
+    //     length total-proportion=0.5
+    //     position "left"
+    //     gaps-between-tabs 0.0
+    //     corner-radius 0.0
+    //     urgent-color "#ba1a1a"
+    //     active-color "#635f4a"
+    //     inactive-color "#eae2c9"
+    // }
+    // insert-hint {
+    //     color "635f4a80"
+    // }
     default-column-width {
         proportion 0.5
     }
     center-focused-column "never"
     always-center-single-column
 }
+
 cursor {
-    xcursor-theme "default"
+    xcursor-theme "catppuccin-mocha-dark-cursors"
     xcursor-size 24
     hide-when-typing
     hide-after-inactive-ms 4000
 }
 hotkey-overlay {
     skip-at-startup
+}
+recent-windows {
+    off
 }
 binds {
     Mod+C repeat=false {
@@ -127,6 +143,9 @@ binds {
     }
     Mod+Shift+G {
         spawn-sh "noctalia msg session lock"
+    }
+    Mod+Alt+G {
+        spawn-sh "noctalia msg session logout"
     }
     Mod+Shift+H {
         move-column-left
