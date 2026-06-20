@@ -1,13 +1,8 @@
 spawn-at-startup "noctalia"
 include optional=true "noctalia.kdl"
+prefer-no-csd
 input {
     keyboard {
-        // xkb {
-        //     layout "us"
-        //     model ""
-        //     rules ""
-        //     variant "colemak"
-        // }
         repeat-delay 600
         repeat-rate 25
         track-layout "global"
@@ -28,61 +23,24 @@ output "eDP-1" {
     transform "normal"
     mode "1920x1200@60.003000"
 }
-// screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-prefer-no-csd
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
-    // background-effect {
-    //     blur true
-    //     xray false
-    // }
 }
-// blur {
-//     passes 2
-//     offset 3
-//     noise 0.03
-//     saturation 1.0
-// }
 layout {
     gaps 4
-    // struts {
-    //     left 0
-    //     right 0
-    //     top 0
-    //     bottom 0
-    // }
     focus-ring {
         width 0
-        // urgent-color "#ba1a1a"
-        // active-color "#635f4a"
-        // inactive-color "#fdf8f5"
     }
     border {
         width 4
-        // off
     }
-    // tab-indicator {
-    //     gap 5.0
-    //     width 4.0
-    //     length total-proportion=0.5
-    //     position "left"
-    //     gaps-between-tabs 0.0
-    //     corner-radius 0.0
-    //     urgent-color "#ba1a1a"
-    //     active-color "#635f4a"
-    //     inactive-color "#eae2c9"
-    // }
-    // insert-hint {
-    //     color "635f4a80"
-    // }
     default-column-width {
         proportion 0.5
     }
     center-focused-column "never"
     always-center-single-column
 }
-
 cursor {
     xcursor-theme "catppuccin-mocha-dark-cursors"
     xcursor-size 24
@@ -94,6 +52,9 @@ hotkey-overlay {
 }
 recent-windows {
     off
+}
+debug {
+    honor-xdg-activation-with-invalid-serial true
 }
 binds {
     Mod+C repeat=false {
@@ -204,7 +165,4 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true {
         spawn "noctalia" "msg" "brightness-up"
     }
-}
-debug {
-    honor-xdg-activation-with-invalid-serial true
 }
