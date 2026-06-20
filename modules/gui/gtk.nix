@@ -11,10 +11,6 @@
         name = "Iosevka Nerd Font";
         size = 11;
       };
-      # cursorTheme = {
-      #   package = pkgs.catppuccin-cursors.mochaDark;
-      #   name = "catpuccin-mocha-dark-cursors";
-      # };
       iconTheme = {
         package = pkgs.papirus-icon-theme;
         name = "Papirus";
