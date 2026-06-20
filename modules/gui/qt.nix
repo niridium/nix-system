@@ -7,6 +7,7 @@
         Appearance = {
           color_scheme_path = "/home/nixy/.config/qt6ct/colors/noctalia.conf";
           custom_palette = true;
+          style = "Breeze";
           icon_theme = "Papirus";
         };
         Fonts = {
@@ -14,6 +15,7 @@
           general = "\"Iosevka Nerd Font,11\"";
         };
       };
+      style.name = "breeze";
     };
   };
 }
