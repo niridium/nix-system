@@ -24,7 +24,12 @@
         ];
       };
       #---Keyboard & Locales-----------------
-      console.keyMap = "colemak";
+      console.useXkbConfig = true;
+      # console.keyMap = "colemak";
+      services.xserver.xkb = {
+        layout = "us";
+        variant = "colemak";
+      };
       time.timeZone = "Europe/Madrid";
       i18n = {
         defaultLocale = "es_ES.UTF-8";
@@ -41,7 +46,14 @@
           enable = true;
           enableNotifications = true;
         };
+        #---Power Management----------------
+        power-profiles-daemon.enable = true;
+        #---Firmware--------
+        fwupd.enable = true;
+        #---Audio-----------------------
+        pipewire.enable = true;
       };
+      security.rtkit.enable = true;
       #---Zswap------------------------
       # swapDevices = [
       #   {
@@ -55,16 +67,6 @@
       #   "zswap.max_pool_percent=20"
       #   "zswap.shrinker_enabled=1"
       # ];
-      #--------------------------------
-      services = {
-        #---Power Management----------------
-        power-profiles-daemon.enable = true;
-        #---Firmware--------
-        fwupd.enable = true;
-      };
-      #---Audio-----------------------
-      services.pipewire.enable = true;
-      security.rtkit.enable = true;
       #---Fonts------------------------------
       fonts = {
         enableDefaultPackages = true;

@@ -20,7 +20,7 @@
             position = "top";
             radius = 14;
             scale = 1.1;
-            shadow = false;
+            shadow = true;
             start = ["cpu" "ram" "weather"];
             thickness = 40;
             widget_spacing = 15;
