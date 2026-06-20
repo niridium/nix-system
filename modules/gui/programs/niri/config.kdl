@@ -1,0 +1,191 @@
+spawn-at-startup "noctalia"
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            model ""
+            rules ""
+            variant "colemak"
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+    focus-follows-mouse
+}
+output "HDMI-A-1" {
+    focus-at-startup
+    transform "normal"
+    position x=-1536 y=-240
+    mode "2560x1440@143.999000"
+}
+output "eDP-1" {
+    transform "normal"
+    mode "1920x1200@60.003000"
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+window-rule {
+    geometry-corner-radius 10.0 10.0 10.0 10.0
+    clip-to-geometry true
+}
+layout {
+    gaps 8
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+    focus-ring {
+        width 4
+        urgent-color "#ba1a1a"
+        active-color "#635f4a"
+        inactive-color "#fdf8f5"
+    }
+    border {
+        off
+    }
+    tab-indicator {
+        gap 5.0
+        width 4.0
+        length total-proportion=0.5
+        position "left"
+        gaps-between-tabs 0.0
+        corner-radius 0.0
+        urgent-color "#ba1a1a"
+        active-color "#635f4a"
+        inactive-color "#eae2c9"
+    }
+    insert-hint {
+        color "635f4a80"
+    }
+    default-column-width {
+        proportion 0.5
+    }
+    center-focused-column "never"
+    always-center-single-column
+}
+cursor {
+    xcursor-theme "default"
+    xcursor-size 24
+    hide-when-typing
+    hide-after-inactive-ms 4000
+}
+hotkey-overlay {
+    skip-at-startup
+}
+binds {
+    Mod+C repeat=false {
+        close-window
+    }
+    Mod+Ctrl+R {
+        reset-window-height
+    }
+    Mod+Down {
+        focus-window-down
+    }
+    Mod+F {
+        maximize-column
+    }
+    Mod+H {
+        focus-column-left
+    }
+    Mod+J {
+        focus-window-down
+    }
+    Mod+K {
+        focus-window-up
+    }
+    Mod+L {
+        focus-column-right
+    }
+    Mod+Left {
+        focus-column-left
+    }
+    Mod+O repeat=false {
+        toggle-overview
+    }
+    Mod+Page_Down {
+        focus-workspace-down
+    }
+    Mod+Page_Up {
+        focus-workspace-up
+    }
+    Mod+R {
+        switch-preset-column-width
+    }
+    Mod+Right {
+        focus-column-right
+    }
+    Mod+S {
+        spawn-sh "noctalia msg panel-toggle control-center"
+    }
+    Mod+Shift+G {
+        spawn-sh "noctalia msg session lock"
+    }
+    Mod+Shift+H {
+        move-column-left
+    }
+    Mod+Shift+J {
+        move-window-down
+    }
+    Mod+Shift+K {
+        move-window-up
+    }
+    Mod+Shift+L {
+        move-column-right
+    }
+    Mod+Shift+R {
+        switch-preset-window-height
+    }
+    Mod+Space {
+        spawn-sh "noctalia msg panel-toggle launcher"
+    }
+    Mod+Up {
+        focus-window-up
+    }
+    Mod+V {
+        toggle-window-floating
+    }
+    Mod+WheelScrollLeft {
+        focus-column-left
+    }
+    Mod+WheelScrollRight {
+        focus-column-right
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "noctalia" "msg" "volume-down"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "noctalia" "msg" "mic-mute"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "noctalia" "msg" "volume-mute"
+    }
+    XF86AudioNext allow-when-locked=true {
+        spawn "noctalia" "msg" "media" "next"
+    }
+    XF86AudioPlay allow-when-locked=true {
+        spawn "noctalia" "msg" "media" "toggle"
+    }
+    XF86AudioPrev allow-when-locked=true {
+        spawn "noctalia" "msg" "media" "previous"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "noctalia" "msg" "volume-up"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "noctalia" "msg" "brightness-down"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "noctalia" "msg" "brightness-up"
+    }
+}
+debug {
+    honor-xdg-activation-with-invalid-serial true
+}
