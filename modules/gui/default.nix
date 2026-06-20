@@ -32,6 +32,13 @@
         xwayland-satellite # X11 compatibility
       ];
       #---------------------------------------
+      home.pointerCursor = {
+        package = pkgs.catppuccin-cursors.mochaDark;
+        name = "catppuccin-mocha-dark-cursors";
+        size = 24;
+        x11.enable = true;
+        gtk.enable = true;
+      };
     };
   };
 }
