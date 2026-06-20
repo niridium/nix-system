@@ -97,7 +97,7 @@
         };
 
         terminal = {
-          shell.program = "bash";
+          shell = "system";
           font_size = 16;
           font_family = "Iosevka Nerd Font";
           cursor_shape = "bar";
