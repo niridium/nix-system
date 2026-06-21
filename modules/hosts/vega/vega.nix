@@ -11,12 +11,21 @@
         (fs.btrfsLuks {systemDevice = "/dev/nvme0n1";})
         (swap {swapAmount = 8;})
         (network {hostname = "vega";})
-        vegaHardware
-        base
+        (hardware {
+          cpu = "amd";
+          bootModules = [
+            "nvme"
+            "xhci_pci"
+            "thunderbolt"
+            "usbhid"
+          ];
+        })
+        # vegaHardware
+        # base
         #---One mandatory user----
         nixyGui
         #-------------------------
-        gui
+        # gui
         laptop
         gaming
 
