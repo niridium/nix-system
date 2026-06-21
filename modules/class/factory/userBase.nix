@@ -7,7 +7,10 @@
     }: {
       users.users.${username} = {
         isNormalUser = true;
-        extraGroups = ["wheel" "networkmanager"] ++ lib.optional config.hardware.i2c.enable "i2c";
+        extraGroups =
+          ["wheel" "networkmanager"]
+          ++ lib.optional config.hardware.i2c.enable "i2c"
+          ++ lib.optional config.virtualisation.libvirtd.enable "libvirtd";
       };
       services.greetd.settings.default_session.user = lib.mkIf config.services.greetd.enable "${username}";
       home-manager.users."${username}" = {

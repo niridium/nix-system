@@ -23,6 +23,7 @@
         tailscale
         wireless
         consumer
+        virtManager
       ];
     };
   };
