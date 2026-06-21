@@ -1,30 +1,22 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   flake.factory.hardware = {
-    # modulesPath,
+    cpu ? "",
     bootModules,
-    platform,
-  }: {
-    # imports = [
-    #   (modulesPath + "/installer/scan/not-detected.nix")
-    # ];
-
+    platform ? "x86_64-linux",
+  }: let
+    isCpu =
+      if cpu == ""
+      then false
+      else true;
+  in {
     boot.initrd.availableKernelModules = bootModules;
-    # [
-    #     # "nvme"
-    #     # "xhci_pci"
-    #     # "thunderbolt"
-    #     # "usbhid"
-    #   ];
 
-    # nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     nixpkgs.hostPlatform = lib.mkDefault "${platform}";
 
-    # AMD Hardware
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    boot.kernelModules = ["kvm-amd"];
+    hardware = {
+      enableRedistributableFirmware = true;
+      cpu = lib.optionalAttrs isCpu {${cpu}.updateMicrocode = true;};
+    };
+    # boot.kernelModules = ["kvm-amd"];
   };
 }
