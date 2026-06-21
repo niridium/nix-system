@@ -27,8 +27,6 @@
           mountPoint = "/storage";
           format = "btrfs";
         })
-        # licherHardware
-        # base
         #---One mandatory user-----
         nixyServer
         #---Services---------------

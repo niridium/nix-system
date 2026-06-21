@@ -17,6 +17,5 @@
       enableRedistributableFirmware = true;
       cpu = lib.optionalAttrs isCpu {${cpu}.updateMicrocode = true;};
     };
-    # boot.kernelModules = ["kvm-amd"];
   };
 }

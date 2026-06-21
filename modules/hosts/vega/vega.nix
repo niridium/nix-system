@@ -20,8 +20,6 @@
             "usbhid"
           ];
         })
-        # vegaHardware
-        # base
         #---One mandatory user----
         nixyGui
         #-------------------------
