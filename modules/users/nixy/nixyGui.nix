@@ -2,6 +2,7 @@
   flake.modules.nixos.nixyGui = {
     imports = with self.modules.nixos; [
       nixyBase
+      gui
     ];
     home-manager.users.nixy = {pkgs, ...}: {
       imports = with self.modules.homeManager; [

@@ -5,6 +5,7 @@
       config,
       ...
     }: {
+      imports = [self.modules.nixos.base];
       users.users.${username} = {
         isNormalUser = true;
         extraGroups =
