@@ -18,7 +18,7 @@ user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
 
 // PREF: disable passkeys
-user_pref("security.webauth.webauthn", false);
+// user_pref("security.webauth.webauthn", false);
 
 // PREF: ask where to save every file
 user_pref("browser.download.useDownloadDir", false);
