@@ -1,8 +1,14 @@
 {inputs, ...}: {
   flake-file.inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    agenix.url = "github:ryantm/agenix";
-    direnv-instant.url = "github:Mic92/direnv-instant";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    direnv-instant = {
+      url = "github:Mic92/direnv-instant";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +19,7 @@
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
+      # Noctalia is using packages from cache
     };
   };
   flake.modules = {
