@@ -31,6 +31,7 @@
         wireless
         consumer
         virtManager
+        waydroid
       ];
     };
   };
