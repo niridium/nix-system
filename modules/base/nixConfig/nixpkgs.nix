@@ -8,6 +8,10 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:niri-wm/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   flake.modules.nixos.nixConfig = {
     nixpkgs = {
@@ -15,6 +19,7 @@
       overlays = with inputs; [
         helium.overlays.default
         nur.overlays.default
+        niri.overlays.default
       ];
     };
   };
