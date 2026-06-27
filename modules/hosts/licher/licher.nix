@@ -28,7 +28,7 @@
           format = "btrfs";
         })
         #---One mandatory user-----
-        nixyServer
+        nixyGui
         #---Services---------------
         actualBudget
         dawarich
@@ -40,6 +40,15 @@
         tailscale
         builder
         headlessGraphics
+
+        gaming
+        #---Config-------------
+        {
+          gamingServer = {
+            enable = true;
+            virtualDisplay = "0000:0c:00.0";
+          };
+        }
       ];
     };
   };
