@@ -13,20 +13,20 @@ TODO after refactor
 
 ## Modules and Config
 
-> ### `nixy`
->
-> > `user.nixy`
-> >
-> > > `.enable`: Create the nixy user  
-> > > `.isGui`: Enable the gui modules for nixy [^1]  
-> > > `.isServer`: Enable multiple services [^2]
+### `nixy`
 
-> ### `gaming`
->
-> > `gamingServer`
-> >
-> > > `.enable`: Enable sunshine service  
-> > > `.virtualDisplay`: If your server is headless and you have and AMD GPU you can enter the PCI address here. More info at [AMD Virtual Display](https://wiki.archlinux.org/title/AMDGPU#Virtual_display_on_headless_setups)
+`user.nixy`
+
+> `.enable`: Create the nixy user  
+> `.isGui`: Enable the gui modules for nixy [^1]  
+> `.isServer`: Enable multiple services [^2]
+
+### `gaming`
+
+`gamingServer`
+
+> `.enable`: Enable sunshine service  
+> `.virtualDisplay`: If your server is headless and you have and AMD GPU you can enter the PCI address here. More info at [AMD Virtual Display](https://wiki.archlinux.org/title/AMDGPU#Virtual_display_on_headless_setups)
 
 ---
 
