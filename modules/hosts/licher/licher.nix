@@ -28,7 +28,7 @@
           format = "btrfs";
         })
         #---One mandatory user-----
-        nixyGui
+        nixy
         #---Services---------------
         actualBudget
         dawarich
@@ -42,11 +42,15 @@
         headlessGraphics
 
         gaming
-        #---Config-------------
         {
           gamingServer = {
             enable = true;
             virtualDisplay = "0000:0c:00.0";
+          };
+          user.nixy = {
+            enable = true;
+            isGui = true;
+            isServer = true;
           };
         }
       ];

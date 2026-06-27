@@ -21,7 +21,7 @@
           ];
         })
         #---One mandatory user----
-        nixyGui
+        nixy
         #-------------------------
         # gui
         laptop
@@ -32,6 +32,12 @@
         consumer
         virtManager
         waydroid
+        {
+          user.nixy = {
+            enable = true;
+            isGui = true;
+          };
+        }
       ];
     };
   };

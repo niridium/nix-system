@@ -1,29 +1,64 @@
 {self, ...}: {
-  config.flake.factory.userBase = {username}: {
-    nixos."${username}Base" = {
-      lib,
+  config.flake.factory.user = {username}: {
+    nixos."${username}" = {
       config,
+      pkgs,
+      lib,
       ...
-    }: {
-      imports = [self.modules.nixos.base];
-      users.users.${username} = {
-        isNormalUser = true;
-        extraGroups =
-          ["wheel" "networkmanager"]
-          ++ lib.optional config.hardware.i2c.enable "i2c"
-          ++ lib.optional config.virtualisation.libvirtd.enable "libvirtd"
-          ++ lib.optionals config.services.sunshine.enable ["input" "video"];
+    }: let
+      cfg = config.user."${username}";
+      hm = self.modules.homeManager;
+    in {
+      imports = [
+        self.modules.nixos.base
+        self.modules.nixos.gui
+      ];
+      options.user."${username}" = {
+        enable = lib.mkEnableOption "${username} user";
+        isServer = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
+        isGui = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
       };
-      services.greetd.settings.default_session.user = lib.mkIf config.services.greetd.enable "${username}";
-      home-manager.users."${username}" = {
-        imports = [
-          self.modules.homeManager.base
-          self.modules.homeManager."${username}Base"
-        ];
+      config = {
+        users.users.${username} = {
+          isNormalUser = true;
+          extraGroups =
+            ["wheel" "networkmanager"]
+            ++ lib.optional config.hardware.i2c.enable "i2c"
+            ++ lib.optional config.virtualisation.libvirtd.enable "libvirtd"
+            ++ lib.optionals config.services.sunshine.enable ["input" "video"];
+        };
+        services.greetd.settings.default_session.user = lib.mkIf config.services.greetd.enable "${username}";
+        gui.enable = lib.mkIf cfg.isGui true;
+        home-manager.users."${username}" = {
+          home = {
+            username = "${username}";
+            packages = [
+              pkgs.handbrake
+              pkgs.immich-cli
+            ];
+          };
+          imports =
+            [
+              hm.base
+              hm.beets
+            ]
+            ++ lib.optionals cfg.isGui [
+              hm.gui
+              hm.firefoxBrowser
+              hm.zedEditor
+              hm.gaming
+            ]
+            ++ lib.optionals cfg.isServer [
+              hm.ollama
+            ];
+        };
       };
-    };
-    homeManager."${username}Base" = {
-      home.username = "${username}";
     };
   };
 }

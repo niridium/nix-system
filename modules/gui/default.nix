@@ -1,23 +1,33 @@
-{
+{lib, ...}: {
   flake.modules = {
-    nixos.gui = {pkgs, ...}: {
-      #---Backlight control------
-      hardware.i2c.enable = true;
-      #---Login manager-----------------------------
-      services.greetd = {
-        enable = true;
-        settings.default_session = {
-          command = "${pkgs.niri}/bin/niri-session";
-        };
+    nixos.gui = {
+      pkgs,
+      config,
+      ...
+    }: {
+      options.gui = {
+        enable = lib.mkEnableOption "Enable system graphical user interface";
       };
-      #---Filesystems tool for Nautilus---
-      services.gvfs.enable = true;
-      #---Home Manager + DE requirement---
-      environment.pathsToLink = [
-        "/share/applications"
-        "/share/xdg-desktop-portal"
-      ];
-      #----------------------------
+      config = lib.mkIf config.gui.enable {
+        #---Backlight control------
+        hardware.i2c.enable = true;
+        #---Login manager-----------------------------
+        services.greetd = {
+          enable = true;
+          settings.default_session = {
+            command = "${pkgs.niri}/bin/niri-session";
+          };
+        };
+        #---Filesystems tool for Nautilus---
+        services.gvfs.enable = true;
+        #---Home Manager + DE requirement---
+        environment.pathsToLink = [
+          "/share/applications"
+          "/share/xdg-desktop-portal"
+        ];
+        #----------------------------
+        programs.localsend.enable = true;
+      };
     };
     homeManager.gui = {pkgs, ...}: {
       #---Packages with no custom config------
