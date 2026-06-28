@@ -1,4 +1,10 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: let
+  nx = self.modules.nixos;
+in {
   flake-file.inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix = {
@@ -23,19 +29,26 @@
     };
   };
   flake.modules = {
-    nixos.base = with inputs; {
+    nixos.base = {
       imports = [
-        nix-index-database.nixosModules.default
-        home-manager.nixosModules.home-manager
+        inputs.nix-index-database.nixosModules.default
+        inputs.home-manager.nixosModules.home-manager
         inputs.disko.nixosModules.disko
-        self.modules.nixos.nixConfig
+        #---My modules---
+        nx.nixConfig
+        nx.tailscale
+        #---With options
+        nx.gaming
+        nx.hardware
+        nx.nixBuilds
+        nx.virtualisation
       ];
     };
     homeManager.base = {
-      imports = with inputs; [
-        agenix.homeManagerModules.default
-        direnv-instant.homeModules.direnv-instant
-        noctalia.homeModules.default
+      imports = [
+        inputs.agenix.homeManagerModules.default
+        inputs.direnv-instant.homeModules.direnv-instant
+        inputs.noctalia.homeModules.default
       ];
     };
   };

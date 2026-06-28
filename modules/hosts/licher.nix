@@ -2,17 +2,19 @@
   inputs,
   self,
   ...
-}: {
+}: let
+  nx = self.modules.nixos;
+  fcty = self.factory;
+  lb = self.lib;
+in {
   flake = {
     nixosConfigurations.licher = inputs.nixpkgs.lib.nixosSystem {
-      modules = with self.modules.nixos;
-      with self.factory;
-      with self.lib; [
+      modules = [
         #---Core-------------------
-        (fs.btrfs {systemDevice = "/dev/sdc";})
-        (swap {swapAmount = 8;})
-        (network {hostname = "licher";})
-        (hardware {
+        (fcty.fs.btrfs {systemDevice = "/dev/sdc";})
+        (fcty.swap {swapAmount = 8;})
+        (fcty.network {hostname = "licher";})
+        (fcty.hardware {
           cpu = "amd";
           bootModules = [
             "ahci"
@@ -21,36 +23,37 @@
             "usbhid"
           ];
         })
-        (mount {
+        (lb.mount {
           device = "/dev/md127";
           label = "storage";
           mountPoint = "/storage";
           format = "btrfs";
         })
         #---One mandatory user-----
-        nixy
+        nx.nixy
         #---Services---------------
-        actualBudget
-        dawarich
-        immich
-        navidrome
-        openssh
+        nx.actualBudget
+        nx.dawarich
+        nx.immich
+        nx.navidrome
+        nx.openssh
         #--------------------------
-        swRaid
-        tailscale
-        builder
-        headlessGraphics
-
-        gaming
+        nx.swRaid
+        nx.headlessGraphics
         {
-          gamingServer = {
-            enable = true;
-            virtualDisplay = "0000:0c:00.0";
-          };
           user.nixy = {
             enable = true;
             isGui = true;
             isServer = true;
+            isGaming = true;
+          };
+          gamingServer = {
+            enable = true;
+            virtualDisplay = "0000:0c:00.0";
+          };
+          nixBuilds = {
+            enable = true;
+            isBuilder = true;
           };
         }
       ];

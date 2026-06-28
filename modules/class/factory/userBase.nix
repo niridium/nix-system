@@ -23,6 +23,10 @@
           type = lib.types.bool;
           default = false;
         };
+        isGaming = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+        };
       };
       config = {
         users.users.${username} = {
@@ -34,7 +38,10 @@
             ++ lib.optionals config.services.sunshine.enable ["input" "video"];
         };
         services.greetd.settings.default_session.user = lib.mkIf config.services.greetd.enable "${username}";
+        #---Enable top level nixos options---
         gui.enable = lib.mkIf cfg.isGui true;
+        gaming.enable = lib.mkIf cfg.isGaming true;
+        #---Home Manager--------------------
         home-manager.users."${username}" = {
           home = {
             username = "${username}";
@@ -52,6 +59,8 @@
               hm.gui
               hm.firefoxBrowser
               hm.zedEditor
+            ]
+            ++ lib.optionals cfg.isGaming [
               hm.gaming
             ]
             ++ lib.optionals cfg.isServer [
