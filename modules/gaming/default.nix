@@ -16,10 +16,10 @@
       home = {
         packages = [
           pkgs.moonlight-qt
-          pkgs.factorio-space-age
+          # pkgs.factorio-space-age
         ];
         extraDependencies = [
-          pkgs.factorio-space-age.src
+          # pkgs.factorio-space-age.src
         ];
       };
     };
