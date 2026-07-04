@@ -10,7 +10,7 @@
       };
     };
     config = lib.mkIf cfg.enable {
-      boot.kernelParams = lib.mkIf (cfg.virtualDisplay != "") ["virtual_display=${cfg.virtualDisplay},x"];
+      boot.kernelParams = lib.mkIf (cfg.virtualDisplay != "") ["amdgpu.virtual_display=${cfg.virtualDisplay},x"];
       services = {
         udev.extraRules = ''KERNEL=="uinput", MODE="0660", GROUP="input", SYMLINK+="uinput" '';
         sunshine = {
