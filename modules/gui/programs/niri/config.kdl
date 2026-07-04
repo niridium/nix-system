@@ -23,6 +23,10 @@ output "eDP-1" {
     transform "normal"
     mode "1920x1200@60.003000"
 }
+output "Virtual-1" {
+    transform "normal"
+    mode "2560x1440@59.974"
+}
 window-rule {
     geometry-corner-radius 10
     clip-to-geometry true
