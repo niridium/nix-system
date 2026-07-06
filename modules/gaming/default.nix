@@ -1,6 +1,10 @@
 {lib, ...}: {
   flake.modules = {
-    nixos.gaming = {config, ...}: let
+    nixos.gaming = {
+      config,
+      pkgs,
+      ...
+    }: let
       cfg = config.gaming;
     in {
       options.gaming = {
@@ -9,10 +13,15 @@
       config = lib.mkIf cfg.enable {
         programs.steam = {
           enable = true;
+          extest.enable = true;
+          extraCompatPackages = [
+            pkgs.proton-ge-bin
+          ];
         };
       };
     };
     homeManager.gaming = {pkgs, ...}: {
+      programs.lutris.enable = true;
       home = {
         packages = [
           pkgs.moonlight-qt
