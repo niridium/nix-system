@@ -8,7 +8,7 @@
       settings = {
         directory = "~/Music";
         library = "~/Music/library.db";
-        import.copy = "yes";
+        import.copy = true;
         plugins = [
           "musicbrainz"
           "deezer"
