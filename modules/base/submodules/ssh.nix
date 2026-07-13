@@ -6,9 +6,9 @@
         enable = true;
         enableDefaultConfig = false;
         settings = {
-          "licher" = {
+          "cronos" = {
             hostname = "100.75.222.43";
-            user = "nixy";
+            user = "amalthea";
           };
           "codeberg.org" = {
             hostname = "codeberg.org";
