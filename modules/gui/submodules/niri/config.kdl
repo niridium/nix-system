@@ -28,11 +28,11 @@ output "Virtual-1" {
     mode "2560x1440@59.974"
 }
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 layout {
-    gaps 4
+    gaps 0
     focus-ring {
         width 0
     }
