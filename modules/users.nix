@@ -25,8 +25,8 @@
             isNormalUser = true;
             extraGroups =
               ["wheel" "networkmanager"]
-              ++ lib.optional (config.home-manager.users.${user}.home.pointerCursor.enable) "i2c"
-              ++ lib.optional (config.virtualisation.libvirtd.enable) "libvirtd";
+              ++ lib.optional config.home-manager.users.${user}.home.pointerCursor.enable "i2c"
+              ++ lib.optional config.virtualisation.libvirtd.enable "libvirtd";
           })
         userNames);
       };

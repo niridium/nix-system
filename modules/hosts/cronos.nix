@@ -20,8 +20,8 @@
         ];
         includes = with aspects; [
           (users {
+            inherit hostName;
             userNames = ["nixy" "amalthea"];
-            hostName = hostName;
           })
           (gui._.autoStart {userName = "amalthea";})
 
