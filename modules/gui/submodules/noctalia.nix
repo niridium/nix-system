@@ -78,7 +78,6 @@
           lockscreen = {
             blur_intensity = 0.0;
             tint_intensity = 0.0;
-            wallpaper_blur_intensity = 0.5;
           };
           lockscreen_widgets.enabled = false;
           nightlight = {
@@ -108,11 +107,8 @@
             panel = {
               clipboard_placement = "attached";
               clipboard_position = "auto";
-              launcher_categories = false;
-              launcher_compact = true;
               launcher_placement = "attached";
               launcher_position = "auto";
-              launcher_show_icons = false;
               open_near_click_clipboard = true;
               open_near_click_control_center = true;
               open_near_click_session = true;
@@ -123,8 +119,9 @@
           };
           system.monitor.gpu_poll_seconds = 5;
           theme = {
-            community_palette = "Cream";
+            community_palette = "Breeze";
             mode = "auto";
+            pure_black_dark = true;
             source = "community";
             wallpaper_scheme = "faithful";
             templates = {
