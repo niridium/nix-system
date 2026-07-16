@@ -10,7 +10,7 @@
       }: {
         programs.firefox = {
           enable = true;
-          package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-beta-bin;
+          package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
           configPath = "${config.xdg.configHome}/mozilla/firefox";
           languagePacks = ["en" "es-ES"];
         };
