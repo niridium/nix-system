@@ -3,7 +3,7 @@
     nixos.services.navidrome = {
       enable = true;
       settings = {
-        MusicFolder = "/storage/Backups/vega/Music";
+        MusicFolder = "/storage/Backups/apollo/Music";
 
         EnableInsightsCollector = true;
 
