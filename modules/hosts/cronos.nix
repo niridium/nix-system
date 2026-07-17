@@ -17,6 +17,7 @@
           swRaid
           headlessGraphics
           ollama
+          linkding
         ];
         includes = with aspects; [
           (users {
