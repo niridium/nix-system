@@ -8,7 +8,7 @@
         EnableInsightsCollector = true;
 
         Backup = {
-          Path = "/storage/Backups/licher/Navidrome";
+          Path = "/storage/navidrome";
           Schedule = "0 0 * * *";
           Count = 7;
         };
