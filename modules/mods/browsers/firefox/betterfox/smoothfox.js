@@ -1,8 +1,7 @@
-/****************************************************************************
- * START: SMOOTHFOX                                                       *
-****************************************************************************/
-// visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
-// Enter your scrolling overrides below this line:
+// Smoothfox
+// Version 152
+
+// NATURAL SMOOTH SCROLLING V3 [MODIFIED]
 user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
 user_pref("general.smoothScroll", true); // DEFAULT
 user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 12);

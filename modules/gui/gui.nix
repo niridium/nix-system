@@ -42,6 +42,7 @@
           tutanota-desktop # E-mail client
           gelly # Subsonic/Jellyfin client
           xwayland-satellite # X11 compatibility
+          sioyek # PDF reader
         ];
         #---------------------------------------
         home.pointerCursor = {
