@@ -4,10 +4,6 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
-    betterfox = {
-      url = "github:yokoffing/Betterfox";
-      flake = false;
-    };
     direnv-instant.url = "github:Mic92/direnv-instant";
     disko.url = "github:nix-community/disko/latest";
     firefox.url = "github:nix-community/flake-firefox-nightly";
