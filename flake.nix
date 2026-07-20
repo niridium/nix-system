@@ -7,6 +7,10 @@
     direnv-instant.url = "github:Mic92/direnv-instant";
     disko.url = "github:nix-community/disko/latest";
     firefox.url = "github:nix-community/flake-firefox-nightly";
+    firefox-csshacks = {
+      url = "github:MrOtherGuy/firefox-csshacks";
+      flake = false;
+    };
     flake-aspects.url = "github:vic/flake-aspects";
     flake-file.url = "github:vic/flake-file";
     flake-parts.url = "github:hercules-ci/flake-parts";

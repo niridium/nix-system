@@ -7,3 +7,5 @@ user_pref("font.name.monospace.x-western", "Iosevka Nerd Font Mono");
 user_pref("font.minimum-size.x-western", 14);
 user_pref("font.size.variable.x-western", 16);
 user_pref("font.size.monospace.x-western", 14);
+
+user_pref("userchrome.centered-statuspanel.on-top.enabled", true);
