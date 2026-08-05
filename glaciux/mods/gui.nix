@@ -37,14 +37,11 @@ in {
       {
         #---Packages with no custom config------
         home.packages = with pkgs; [
-          localsend # Serverless file transfer
-          nautilus # File manager
+          xwayland-satellite # X11 compatibility
           ddcutil # Backlight control
+          nautilus # File manager
           imv # Image viewer
           mpv # Video player
-          tutanota-desktop # E-mail client
-          gelly # Subsonic/Jellyfin client
-          xwayland-satellite # X11 compatibility
           sioyek # PDF reader
         ];
         #---------------------------------------

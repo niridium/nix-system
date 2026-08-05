@@ -1,5 +1,9 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.immich-cli];
+  home.packages = with pkgs; [
+    immich-cli
+    gelly
+    tutanota-desktop
+  ];
   glaciux = {
     firefox.enable = true;
     zed-editor.enable = true;
