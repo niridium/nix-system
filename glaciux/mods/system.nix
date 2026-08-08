@@ -12,8 +12,9 @@
   };
   console.useXkbConfig = true;
   services.xserver.xkb = {
-    layout = "us";
-    variant = "colemak";
+    layout = "us,us";
+    variant = "colemak,euro";
+    options = "grp:caps_toggle";
   };
   time = {inherit timeZone;};
   i18n = {
