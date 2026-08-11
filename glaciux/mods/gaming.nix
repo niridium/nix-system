@@ -10,7 +10,7 @@
       enable = true;
       steamPackage = pkgs.steam;
       protonPackages = [pkgs.proton-ge-bin];
-      extraPackages = with pkgs; [mangohud winetricks gamemode];
+      extraPackages = with pkgs; [mangohud winetricks];
     };
   };
 in {
@@ -26,6 +26,7 @@ in {
   };
   config = lib.mkIf cfg.enable {
     home-manager.sharedModules = [lutris];
+    programs.gamemode.enable = true;
     environment.systemPackages = [pkgs.moonlight-qt];
     nixpkgs.config.allowUnfreePackages = ["steam" "steam-unwrapped"];
     programs.steam = {
