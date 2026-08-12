@@ -22,6 +22,13 @@ in {
         enable = true;
         package = pkgs.waydroid-nftables;
       };
+      docker = {
+        rootless = {
+          enable = true;
+          setSocketVariable = true;
+        };
+        storageDriver = "btrfs";
+      };
     };
   };
 }
