@@ -29,5 +29,6 @@
     swRaid.enable = true;
     ollama.enable = true;
     linkding.enable = true;
+    virtualisation.enable = true;
   };
 }
