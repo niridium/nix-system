@@ -8,7 +8,7 @@
     services.navidrome = {
       enable = true;
       settings = {
-        MusicFolder = "/storage/Backups/apollo/Music";
+        MusicFolder = "/storage/Music";
         EnableInsightsCollector = true;
         Backup = {
           Path = "/storage/navidrome";
