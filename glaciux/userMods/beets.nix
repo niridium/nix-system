@@ -8,9 +8,9 @@
     programs.beets = {
       enable = true;
       settings = {
-        directory = "~/Music";
-        library = "~/Music/library.db";
-        import.copy = true;
+        directory = "/storage/Music";
+        library = "/storage/Music/library.db";
+        import.copy = false;
         plugins = [
           "musicbrainz"
           "deezer"

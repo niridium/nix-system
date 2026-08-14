@@ -12,5 +12,6 @@
     gtk.enable = true;
     cava.enable = true;
     niri.enable = true;
+    beet.enable = false;
   };
 }
