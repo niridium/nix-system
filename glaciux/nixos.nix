@@ -21,6 +21,7 @@
     ./mods/system.nix
     ./mods/tailscale.nix
     ./mods/virtualisation.nix
+    ./mods/webdav.nix
   ];
   nix = {
     settings = {

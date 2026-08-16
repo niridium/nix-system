@@ -30,5 +30,9 @@
     ollama.enable = true;
     linkding.enable = true;
     virtualisation.enable = true;
+    webdav = {
+      enable = true;
+      directory = "/storage/box";
+    };
   };
 }
