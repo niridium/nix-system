@@ -3,6 +3,7 @@
     immich-cli
     gelly
     tutanota-desktop
+    rclone
   ];
   glaciux = {
     firefox.enable = true;
@@ -12,6 +13,6 @@
     gtk.enable = true;
     cava.enable = true;
     niri.enable = true;
-    beet.enable = false;
+    beets.enable = false;
   };
 }
