@@ -3,7 +3,6 @@
     immich-cli
     gelly
     tutanota-desktop
-    rclone
   ];
   glaciux = {
     firefox.enable = true;

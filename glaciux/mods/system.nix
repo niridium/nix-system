@@ -10,6 +10,7 @@
     # nixos.variantName = "GlaciuxOS";
     stateVersion = "25.11";
   };
+  environment.systemPackages = with pkgs; [rclone];
   console.useXkbConfig = true;
   services.xserver.xkb = {
     layout = "us,us";
