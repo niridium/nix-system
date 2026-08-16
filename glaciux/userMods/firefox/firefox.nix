@@ -110,7 +110,7 @@ in {
         NetworkPrediction = true;
         OfferToSaveLogins = false;
         PasswordManagerEnabled = false;
-        PDFjs.Enabled = false;
+        # PDFjs.Enabled = false;
         PictureInPicture = {
           Enabled = true;
           Locked = true;
