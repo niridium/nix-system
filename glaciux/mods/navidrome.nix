@@ -8,7 +8,7 @@
     services.navidrome = {
       enable = true;
       settings = {
-        MusicFolder = "/storage/Music";
+        MusicFolder = "/storage/box/Music";
         EnableInsightsCollector = true;
         Backup = {
           Path = "/storage/navidrome";
