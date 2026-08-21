@@ -14,6 +14,9 @@ in {
     };
   };
   config = lib.mkIf cfg.enable {
+    #---Screenshots---
+    environment.systemPackages = with pkgs; [grim slurp];
+    environment.sessionVariables = {GRIM_DEFAULT_DIR = "$HOME/Screenshots";};
     #---Backlight control------
     hardware.i2c.enable = true;
     #---Login manager-----------------------------
