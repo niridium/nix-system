@@ -38,6 +38,7 @@
       ./userMods/keepassxc.nix
       ./userMods/noctalia.nix
       ./userMods/qt.nix
+      ./userMods/screenshots.nix
       ./userMods/ssh.nix
       ./userMods/zedEditor.nix
     ];
