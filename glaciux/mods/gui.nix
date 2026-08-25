@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   lib,
   ...
@@ -20,11 +21,14 @@ in {
     #---Backlight control------
     hardware.i2c.enable = true;
     #---Login manager-----------------------------
-    services.greetd = {
-      enable = true;
-      settings.default_session = {
-        command = "${pkgs.niri}/bin/niri-session";
-        user = config.glaciux.gui.defaultUser;
+    services = {
+      displayManager.sessionPackages = [
+        inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default
+        pkgs.niri
+      ];
+      greetd = {
+        enable = true;
+        settings.default_session.user = config.glaciux.gui.defaultUser;
       };
     };
     #---Filesystems tool for Nautilus---

@@ -8,9 +8,21 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-26.05";
     };
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter/v1.2.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     noctalia = {
       url = "github:noctalia-dev/noctalia/v5.0.0-beta.8";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    umbriel = {
+      url = "git+https://github.com/noctalia-dev/umbriel";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+    xdg-desktop-portal-umbriel = {
+      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

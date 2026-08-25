@@ -13,6 +13,7 @@
     ./mods/navidrome.nix
     ./mods/nh.nix
     ./mods/nixLd.nix
+    ./mods/noctalia-greeter.nix
     ./mods/ollama.nix
     ./mods/oom.nix
     ./mods/openssh.nix
