@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   pkgs,
   lib,
   ...
@@ -19,14 +18,14 @@ in {
     hardware.i2c.enable = true;
     #---Login manager-----------------------------
     services = {
-      displayManager.sessionPackages = [
-        # inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default
-        pkgs.niri
-      ];
-      greetd = {
-        enable = true;
-        settings.default_session.user = config.glaciux.gui.defaultUser;
+      displayManager = {
+        noctalia-greeter.enable = true;
+        sessionPackages = [
+          # inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default
+          pkgs.niri
+        ];
       };
+      greetd.settings.default_session.user = config.glaciux.gui.defaultUser;
     };
     #---Filesystems tool for Nautilus---
     services.gvfs.enable = true;

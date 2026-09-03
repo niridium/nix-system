@@ -1,22 +1,14 @@
 {
   config,
-  inputs,
-  # pkgs,
   lib,
   ...
 }: let
   cfg = config.glaciux.noctalia;
 in {
-  imports = [inputs.noctalia.homeModules.default];
   options.glaciux.noctalia.enable = lib.mkEnableOption "noctalia shell";
   config = lib.mkIf cfg.enable {
-    # nix.settings = {
-    #   substituters = ["https://noctalia.cachix.org"];
-    #   trusted-public-keys = ["noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="];
-    # };
     programs.noctalia = {
       enable = true;
-      # package = pkgs.noctalia;
       settings = {
         audio = {
           enable_sounds = true;
