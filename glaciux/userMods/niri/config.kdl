@@ -16,11 +16,13 @@ input {
 output "HDMI-A-1" {
     focus-at-startup
     transform "normal"
-    position x=-1536 y=-240
+    position x=-480 y=-1440
     mode "2560x1440@143.999000"
 }
 output "eDP-1" {
     transform "normal"
+    position x=0 y=0
+    scale 1.25
     mode "1920x1200@60.003000"
 }
 output "Virtual-1" {
