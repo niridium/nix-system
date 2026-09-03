@@ -16,14 +16,14 @@
       url = "github:noctalia-dev/noctalia/v5.0.0-beta.9";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    umbriel = {
-      url = "git+https://github.com/noctalia-dev/umbriel";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-    xdg-desktop-portal-umbriel = {
-      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # umbriel = {
+    #   url = "git+https://github.com/noctalia-dev/umbriel";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # xdg-desktop-portal-umbriel = {
+    #   url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

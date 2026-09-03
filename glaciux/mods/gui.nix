@@ -20,7 +20,7 @@ in {
     #---Login manager-----------------------------
     services = {
       displayManager.sessionPackages = [
-        inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default
+        # inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default
         pkgs.niri
       ];
       greetd = {
