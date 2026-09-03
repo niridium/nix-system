@@ -5,8 +5,12 @@
   in {nixosConfigurations = import ./os.nix {inherit inputs pkgs;};};
 
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    home-manager.url = "github:nix-community/home-manager";
+    firefox-csshacks = {
+      url = "github:MrOtherGuy/firefox-csshacks";
+      flake = false;
     };
     # umbriel = {
     #   url = "git+https://github.com/noctalia-dev/umbriel";
@@ -16,17 +20,5 @@
     #   url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
     #   # inputs.nixpkgs.follows = "nixpkgs";
     # };
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefox-csshacks = {
-      url = "github:MrOtherGuy/firefox-csshacks";
-      flake = false;
-    };
   };
 }
