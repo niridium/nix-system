@@ -14,8 +14,8 @@
   console.useXkbConfig = true;
   services.xserver.xkb = {
     layout = "us,us";
-    variant = "colemak,euro";
-    options = "grp:caps_toggle";
+    variant = "euro,colemak";
+    options = "grp:alts_toggle";
   };
   time = {inherit timeZone;};
   i18n = {
