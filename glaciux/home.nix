@@ -26,6 +26,7 @@
       ./userMods/firefox/firefox.nix
       ./userMods/niri/niri.nix
       # ./userMods/umbriel/umbriel.nix
+      ./userMods/noctalia/noctalia.nix
       ./userMods/beets.nix
       ./userMods/btop.nix
       ./userMods/cava.nix
@@ -36,7 +37,6 @@
       ./userMods/gtk.nix
       ./userMods/helix.nix
       ./userMods/keepassxc.nix
-      ./userMods/noctalia.nix
       ./userMods/qt.nix
       ./userMods/screenshots.nix
       ./userMods/ssh.nix
