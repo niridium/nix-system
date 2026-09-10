@@ -16,7 +16,10 @@ in {
     virtualisation = {
       libvirtd = {
         enable = true;
-        qemu.vhostUserPackages = [pkgs.virtiofsd];
+        qemu = {
+          swtpm.enable = true;
+          vhostUserPackages = [pkgs.virtiofsd];
+        };
       };
       waydroid = {
         enable = true;
