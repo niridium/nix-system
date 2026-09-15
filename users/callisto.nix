@@ -49,5 +49,6 @@
     niri.enable = true;
     # umbriel.enable = true;
     beets.enable = false;
+    vscode.enable = true;
   };
 }

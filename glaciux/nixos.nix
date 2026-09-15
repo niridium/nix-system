@@ -24,6 +24,7 @@
     ./mods/virtualisation.nix
     ./mods/webdav.nix
   ];
+  nixpkgs.config.allowUnfree = true;
   nix = {
     settings = {
       trusted-users = ["@wheel"];
