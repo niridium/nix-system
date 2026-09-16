@@ -3,6 +3,7 @@
     immich-cli
     gelly
     tutanota-desktop
+    temurin-bin
   ];
   programs = {
     eclipse = {
