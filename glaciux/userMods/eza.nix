@@ -16,7 +16,7 @@
         "--binary"
         "--mounts"
         "--time-style=long-iso"
-        "--hyperlink"
+        "--hyperlink=always"
       ];
     };
   };
