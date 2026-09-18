@@ -8,17 +8,17 @@
       storage = {mountPoint = "/storage";};
     };
     swap.enable = true;
-    gui = {
-      enable = true;
-      defaultUser = "amalthea";
-    };
-    gaming = {
-      enable = true;
-      server = {
-        enable = true;
-        virtualDisplay = "0000:0c:00.0";
-      };
-    };
+    # gui = {
+    #   enable = true;
+    #   defaultUser = "amalthea";
+    # };
+    # gaming = {
+    #   enable = true;
+    #   server = {
+    #     enable = true;
+    #     virtualDisplay = "0000:0c:00.0";
+    #   };
+    # };
     distributedBuilds = {
       enable = true;
       isBuilder = true;
