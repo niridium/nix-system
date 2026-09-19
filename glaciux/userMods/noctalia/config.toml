@@ -129,6 +129,9 @@ polkit_placement = "attached"
 [shell.screen_corners]
 enabled = false
 
+[shell.screenshot]
+annotate = true
+
 [system.monitor]
 gpu_poll_seconds = 5
 

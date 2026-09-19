@@ -130,6 +130,12 @@ binds {
     Mod+Alt+G {
         spawn-sh "noctalia msg session logout"
     }
+    Print {
+        spawn-sh "noctalia msg screenshot-region"
+    }
+    Alt+Print {
+        spawn-sh "noctalia msg screenshot-fullscreen pick"
+    }
     XF86AudioLowerVolume allow-when-locked=true {
         spawn "noctalia" "msg" "volume-down"
     }

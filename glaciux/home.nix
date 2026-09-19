@@ -38,7 +38,7 @@
       ./userMods/helix.nix
       ./userMods/keepassxc.nix
       ./userMods/qt.nix
-      ./userMods/screenshots.nix
+      # ./userMods/screenshots.nix
       ./userMods/ssh.nix
       ./userMods/vscode.nix
       ./userMods/zedEditor.nix
