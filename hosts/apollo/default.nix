@@ -1,5 +1,6 @@
 {
   imports = [./hardware-configuration.nix];
+  programs.wayvnc.enable = true;
   glaciux = {
     users.callisto.enable = true;
     btrfsMaintenance.fs.root = {mountPoint = "/";};
