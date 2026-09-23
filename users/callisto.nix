@@ -4,6 +4,7 @@
     gelly
     tutanota-desktop
     temurin-bin
+    drawio
   ];
   programs = {
     eclipse = {
