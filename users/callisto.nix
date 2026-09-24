@@ -5,6 +5,8 @@
     tutanota-desktop
     temurin-bin
     drawio
+    typesetter
+    typst
   ];
   programs = {
     eclipse = {
