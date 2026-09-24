@@ -16,14 +16,14 @@
   ];
   console.useXkbConfig = true;
   services.xserver.xkb = {
-    layout = "us,us,es";
-    variant = "euro,colemak,";
-    options = "grp:alts_toggle";
+    layout = "us,us";
+    variant = "euro,colemak";
+    options = "grp:alt_space_toggle";
   };
   time = {inherit timeZone;};
   i18n = {
     defaultLocale = "es_ES.UTF-8";
-    extraLocales = ["en_US.UTF-8/UTF-8"];
+    extraLocales = ["all"];
     extraLocaleSettings.LC_MESSAGES = "en_US.UTF-8";
   };
   fonts = {
