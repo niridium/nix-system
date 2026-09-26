@@ -17,5 +17,6 @@
         ++ lib.optional config.programs.gamemode.enable "gamemode"
         ++ lib.optional config.glaciux.fancontrol.enable "fan_ctl";
     };
+    services.displayManager.noctalia-greeter.passwordlessSyncUsers = lib.optional config.services.displayManager.noctalia-greeter.enable "${user}";
   };
 }
