@@ -14,31 +14,19 @@ in {
     };
   };
   config = lib.mkIf cfg.enable {
-    #---Backlight control------
     hardware.i2c.enable = true;
-    #---Login manager-----------------------------
+    programs.localsend.enable = true;
+    environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"]; # Home Manager + DE requirement
     services = {
+      gvfs.enable = true; # Filesystems tool for Nautilus
+      greetd.settings.default_session.user = config.glaciux.gui.defaultUser;
       displayManager = {
         noctalia-greeter.enable = true;
-        sessionPackages = [
-          # inputs.umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default
-          pkgs.niri
-        ];
+        sessionPackages = [pkgs.niri];
       };
-      greetd.settings.default_session.user = config.glaciux.gui.defaultUser;
     };
-    #---Filesystems tool for Nautilus---
-    services.gvfs.enable = true;
-    #---Home Manager + DE requirement---
-    environment.pathsToLink = [
-      "/share/applications"
-      "/share/xdg-desktop-portal"
-    ];
-    #----------------------------
-    programs.localsend.enable = true;
     home-manager.sharedModules = [
       {
-        #---Packages with no custom config------
         home.packages = with pkgs; [
           xwayland-satellite # X11 compatibility
           ddcutil # Backlight control
@@ -47,7 +35,6 @@ in {
           mpv # Video player
           sioyek # PDF reader
         ];
-        #---------------------------------------
         home.pointerCursor = {
           enable = true;
           package = pkgs.catppuccin-cursors.mochaDark;
