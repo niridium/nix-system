@@ -7,6 +7,7 @@
     drawio
     typesetter
     typst
+    gnome-calculator
   ];
   programs = {
     eclipse = {
