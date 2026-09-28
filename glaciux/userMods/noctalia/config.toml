@@ -12,7 +12,7 @@ capsule_opacity = 0.0
 capsule_padding = 10.0
 capsule_radius = 0
 capsule_thickness = 1
-center = ["bar", "clock", "bar_2"]
+center = ["bar", "clock", "bar_2", "battery-graph-widget"]
 contact_shadow = false
 end = [
   "nix-monitor",
@@ -27,6 +27,7 @@ end = [
 ]
 font_family = "Iosevka NF"
 font_weight = 400
+layer = "overlay"
 margin_edge = 0
 margin_ends = 0
 panel_overlap = 0
@@ -52,6 +53,20 @@ show_events_card = false
 [desktop_widgets]
 enabled = false
 
+[dock]
+enabled = true
+background_opacity = 1
+launcher_position = "start"
+layer = "overlay"
+position = "left"
+radius = 0
+reserve_space = false
+shadow = false
+smart_auto_hide = true
+
+[hot_corners]
+enabled = true
+
 [idle]
 behavior_order = ["lock", "screen-off", "lock-and-suspend"]
 
@@ -74,6 +89,7 @@ timeout = 660
 auto_locate = true
 
 [lockscreen]
+allow_empty_password = true
 blur_intensity = 0.0
 tint_intensity = 0.0
 
@@ -87,6 +103,7 @@ temperature_night = 5500
 [notification]
 offset_y = 20
 position = "bottom_center"
+layer = "overlay"
 
 [osd]
 offset_y = 20
@@ -131,6 +148,9 @@ enabled = false
 
 [shell.screenshot]
 annotate = true
+
+[shell.window_switcher]
+mru = true
 
 [system.monitor]
 gpu_poll_seconds = 5

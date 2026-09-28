@@ -63,6 +63,11 @@ recent-windows {
 debug {
     honor-xdg-activation-with-invalid-serial true
 }
+gestures {
+    hot-corners {
+        off
+    }
+}
 binds {
     Mod+Escape allow-inhibiting=false {
         toggle-keyboard-shortcuts-inhibit
@@ -117,6 +122,9 @@ binds {
     }
     Mod+Slash {
         reset-window-height
+    }
+    Mod+Tab {
+        spawn-sh "noctalia msg window-switcher"
     }
     Mod+Space {
         spawn-sh "noctalia msg panel-toggle launcher"
