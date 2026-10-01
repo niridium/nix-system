@@ -8,6 +8,7 @@
     typesetter
     typst
     gnome-calculator
+    pi-coding-agent
   ];
   programs = {
     eclipse = {
