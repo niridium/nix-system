@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }: let
@@ -11,6 +12,7 @@ in {
   config = lib.mkIf cfg.enable {
     services.llama-cpp = {
       enable = true;
+      package = pkgs.llama-cpp-vulkan;
       settings = {
         models-dir = "~/models";
         no-models-autoload = true;
