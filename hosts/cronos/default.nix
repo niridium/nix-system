@@ -28,6 +28,7 @@
     openssh.enable = true;
     swRaid.enable = true;
     ollama.enable = true;
+    llamaCpp.enable = true;
     linkding.enable = true;
     virtualisation.enable = true;
     webdav = {
