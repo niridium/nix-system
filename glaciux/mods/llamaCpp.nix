@@ -19,7 +19,7 @@ in {
         jinja = true;
         host = "0.0.0.0";
         port = 12400;
-        ngl = 999;
+        gpu-layers = 999;
         c = 64000;
       };
     };
