@@ -14,7 +14,7 @@ in {
       enable = true;
       package = pkgs.llama-cpp-vulkan;
       settings = {
-        models-dir = "~/models";
+        # models-dir = "~/models";
         no-models-autoload = true;
         jinja = true;
         host = "0.0.0.0";
