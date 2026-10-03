@@ -17,7 +17,7 @@ in {
         # models-dir = "~/models";
         no-models-autoload = true;
         jinja = true;
-        host = "0.0.0.0";
+        # host = "0.0.0.0";
         port = 12400;
         gpu-layers = 999;
         c = 64000;
