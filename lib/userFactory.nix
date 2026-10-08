@@ -13,7 +13,7 @@
       extraGroups =
         ["wheel" "networkmanager"]
         ++ lib.optional config.hardware.i2c.enable "i2c"
-        ++ lib.optional config.virtualisation.libvirtd.enable "libvirtd"
+        ++ lib.optionals config.virtualisation.libvirtd.enable ["libvirtd" "kvm"]
         ++ lib.optional config.programs.gamemode.enable "gamemode"
         ++ lib.optional config.glaciux.fancontrol.enable "fan_ctl";
     };

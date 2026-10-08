@@ -8,6 +8,7 @@
 in {
   options.glaciux.virtualisation.enable = lib.mkEnableOption "virtualisation programs";
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [pods];
     programs.virt-manager.enable = true;
     services = {
       qemuGuest.enable = true;
@@ -31,6 +32,11 @@ in {
           setSocketVariable = true;
         };
         storageDriver = "btrfs";
+      };
+      podman = {
+        enable = true;
+        dockerCompat = true;
+        defaultNetwork.settings.dns_enabled = true;
       };
     };
   };
