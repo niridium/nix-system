@@ -3,12 +3,18 @@
     immich-cli
     gelly
     tutanota-desktop
-    temurin-bin
     drawio
     typesetter
     typst
     gnome-calculator
+    # Java
+    openjdk
+    maven
+    # Pi agent
     pi-coding-agent
+    poppler-utils
+    python3
+    nodejs
   ];
   programs = {
     eclipse = {

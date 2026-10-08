@@ -14,6 +14,7 @@
       settings = {
         init.defaultBranch = "main";
         core.editor = "hx";
+        core.autocrlf = "input";
         gpg.format = "ssh";
         user = {
           name = "niridium";
