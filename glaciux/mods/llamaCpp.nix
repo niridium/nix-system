@@ -21,6 +21,7 @@ in {
         port = 12400;
         gpu-layers = 999;
         c = 100000;
+        cpu-moe = true;
       };
     };
   };
