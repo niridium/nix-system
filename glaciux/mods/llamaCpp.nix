@@ -12,7 +12,7 @@ in {
   config = lib.mkIf cfg.enable {
     services.llama-cpp = {
       enable = true;
-      package = pkgs.llama-cpp-vulkan;
+      package = pkgs.llama-cpp-cuda;
       settings = {
         # models-dir = "~/models";
         no-models-autoload = true;
