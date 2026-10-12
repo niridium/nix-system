@@ -49,7 +49,6 @@
   networking = {
     inherit hostName;
     useDHCP = false;
-    dhcpcd.enable = false;
     networkmanager = {
       enable = true;
       dns = "none";

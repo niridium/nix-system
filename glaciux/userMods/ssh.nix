@@ -11,7 +11,7 @@
       enableDefaultConfig = false;
       settings = {
         "cronos" = {
-          hostname = "100.75.222.43";
+          hostname = "100.72.107.3";
           user = "amalthea";
         };
         "codeberg.org" = {

@@ -19,10 +19,13 @@ in {
     environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"]; # Home Manager + DE requirement
     services = {
       gvfs.enable = true; # Filesystems tool for Nautilus
-      greetd.settings.default_session.user = config.glaciux.gui.defaultUser;
+      greetd = {
+        enable = true;
+        settings.default_session.user = config.glaciux.gui.defaultUser;
+      };
       displayManager = {
         noctalia-greeter.enable = true;
-        sessionPackages = [pkgs.niri];
+        sessionPackages = [pkgs.niri pkgs.umbriel];
       };
     };
     home-manager.sharedModules = [
@@ -40,7 +43,7 @@ in {
           package = pkgs.catppuccin-cursors.mochaDark;
           name = "catppuccin-mocha-dark-cursors";
           size = 24;
-          x11.enable = true;
+          # x11.enable removed: Wayland-only (no .Xresources needed)
           gtk.enable = true;
         };
       }
