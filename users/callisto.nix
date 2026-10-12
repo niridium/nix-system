@@ -65,6 +65,7 @@
     gtk.enable = true;
     cava.enable = true;
     niri.enable = true;
+    umbriel.enable = false;
     beets.enable = false;
     vscode.enable = true;
   };

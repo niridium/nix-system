@@ -11,10 +11,11 @@
     home.packages = [pkgs.tomlplusplus];
     programs.umbriel = {
       enable = true;
+      package = pkgs.umbriel;
       settings = ./config.toml;
     };
     xdg.portal = let
-      portal = inputs.xdg-desktop-portal-umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      portal = pkgs.xdg-desktop-portal-umbriel;
     in {
       enable = true;
       configPackages = [portal];

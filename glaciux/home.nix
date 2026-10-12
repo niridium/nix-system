@@ -25,7 +25,7 @@
       }
       ./userMods/firefox/firefox.nix
       ./userMods/niri/niri.nix
-      # ./userMods/umbriel/umbriel.nix
+      ./userMods/umbriel/umbriel.nix
       ./userMods/noctalia/noctalia.nix
       ./userMods/beets.nix
       ./userMods/btop.nix
