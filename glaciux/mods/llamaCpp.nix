@@ -14,14 +14,15 @@ in {
       enable = true;
       package = pkgs.llama-cpp-cuda;
       settings = {
-        # models-dir = "~/models";
+        models-dir = "/storage/models";
         no-models-autoload = true;
         jinja = true;
-        # host = "0.0.0.0";
+        host = "127.0.0.1";
         port = 12400;
-        gpu-layers = 999;
         c = 100000;
-        cpu-moe = true;
+        n-cpu-moe = 28;
+        load-mode = "none";
+        flash-attn = "on";
       };
     };
   };
