@@ -1,6 +1,8 @@
 {
   imports = [./hardware-configuration.nix];
   services.actual.enable = true;
+  hardware.nvidia.open = true;
+  services.xserver.videoDrivers = ["nvidia"];
   glaciux = {
     users.amalthea.enable = true;
     btrfsMaintenance.fs = {
@@ -26,7 +28,6 @@
     immich.enable = true;
     navidrome.enable = true;
     openssh.enable = true;
-    swRaid.enable = true;
     ollama.enable = true;
     llamaCpp.enable = true;
     linkding.enable = true;
