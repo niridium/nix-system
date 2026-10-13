@@ -15,6 +15,7 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     home-manager.url = "github:nix-community/home-manager";
     fluxr.url = "github:niridium/fluxr-backup";
+    umbriel.url = "github:noctalia-dev/umbriel";
     firefox-csshacks = {
       url = "github:MrOtherGuy/firefox-csshacks";
       flake = false;
