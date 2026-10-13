@@ -28,7 +28,7 @@
     immich.enable = true;
     navidrome.enable = true;
     openssh.enable = true;
-    ollama.enable = true;
+    ollama.enable = false;
     llamaCpp.enable = true;
     linkding.enable = true;
     virtualisation.enable = true;
