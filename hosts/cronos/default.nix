@@ -3,6 +3,10 @@
   services.actual.enable = true;
   hardware.nvidia.open = true;
   services.xserver.videoDrivers = ["nvidia"];
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = true;
+    "net.ipv6.conf.all.forwarding" = true;
+  };
   glaciux = {
     users.amalthea.enable = true;
     btrfsMaintenance.fs = {
