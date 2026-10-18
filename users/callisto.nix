@@ -8,7 +8,8 @@
     typst
     gnome-calculator
     # Java
-    openjdk
+    temurin-bin
+    jdt-language-server
     maven
     # Pi agent
     pi-coding-agent
