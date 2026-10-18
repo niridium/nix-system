@@ -123,11 +123,24 @@ in {
         PromptForDownloadLocation = true;
         SearchEngines = {
           PreventInstalls = true;
-          Default = "DuckDuckGo";
+          Default = "SearXNG";
+          Add = [
+            {
+              Name = "SearXNG";
+              URLTemplate = "https://searxng.sole-alkaid.ts.net/search?q={searchTerms}";
+              Method = "GET";
+              IconURL = "https://searxng.sole-alkaid.ts.net/favicon.ico";
+              Alias = "xng";
+            }
+          ];
           Remove = [
             "Bing"
             "Google"
             "Perplexity"
+            "eBay"
+            "Ecosia"
+            "Qwant"
+            "Wikipedia"
           ];
         };
         SearchSuggestEnabled = false;

@@ -23,16 +23,8 @@
     ];
 
     # Take file names from /chrome/ directory in "https://github.com/MrOtherGuy/firefox-csshacks"
-    userChrome = chromeParts [
-      "centered_statuspanel"
-      "centered_tab_content"
-      "floating_findbar_on_top"
-      "iconized_content_context_menu"
-      "iconized_main_menu"
-      "iconized_tabs_context_menu"
-      "iconized_textbox_context_menu"
-      "tabs_fill_available_width"
-      "urlbar_centered_text"
-    ];
+    userChrome =
+      chromeParts [
+      ];
   };
 }
