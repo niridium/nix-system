@@ -10,6 +10,7 @@
     # nixos.variantName = "GlaciuxOS";
     stateVersion = "25.11";
   };
+  systemd.services.systemd-suspend.serviceConfig.Environment = "SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=0"; # Fix system freezing after suspend
   environment.systemPackages = with pkgs; [
     rclone
     inputs.fluxr.packages.${stdenv.hostPlatform.system}.default
