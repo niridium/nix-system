@@ -8,7 +8,7 @@
 in {
   options.glaciux.virtualisation.enable = lib.mkEnableOption "virtualisation programs";
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [pods];
+    environment.systemPackages = with pkgs; [pods podman-compose];
     programs.virt-manager.enable = true;
     services = {
       qemuGuest.enable = true;
@@ -26,13 +26,13 @@ in {
         enable = true;
         package = pkgs.waydroid-nftables;
       };
-      docker = {
-        rootless = {
-          enable = true;
-          setSocketVariable = true;
-        };
-        storageDriver = "btrfs";
-      };
+      # docker = {
+      #   rootless = {
+      #     enable = true;
+      #     setSocketVariable = true;
+      #   };
+      #   storageDriver = "btrfs";
+      # };
       podman = {
         enable = true;
         dockerCompat = true;
