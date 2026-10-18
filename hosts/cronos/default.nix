@@ -8,7 +8,10 @@
     "net.ipv6.conf.all.forwarding" = true;
   };
   glaciux = {
-    users.amalthea.enable = true;
+    users.amalthea = {
+      enable = true;
+      linger = true;
+    };
     btrfsMaintenance.fs = {
       root = {mountPoint = "/";};
       storage = {mountPoint = "/storage";};
@@ -34,7 +37,7 @@
     openssh.enable = true;
     ollama.enable = false;
     llamaCpp.enable = true;
-    linkding.enable = true;
+    linkding.enable = false;
     virtualisation.enable = true;
     webdav = {
       enable = true;

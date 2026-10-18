@@ -4,11 +4,17 @@
   user,
   lib,
   ...
-}: {
-  options.glaciux.users.${user}.enable = lib.mkEnableOption "${user} user";
-  config = lib.mkIf config.glaciux.users.${user}.enable {
+}: let
+  cfg = config.glaciux.users.${user};
+in {
+  options.glaciux.users.${user} = {
+    enable = lib.mkEnableOption "${user} user";
+    linger = lib.mkEnableOption "lingering";
+  };
+  config = lib.mkIf cfg.enable {
     home-manager.users.${user} = homeManager;
     users.users.${user} = {
+      inherit (cfg) linger;
       isNormalUser = true;
       extraGroups =
         ["wheel" "networkmanager"]
