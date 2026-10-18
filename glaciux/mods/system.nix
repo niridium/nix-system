@@ -54,7 +54,7 @@
       dns = "none";
     };
     nameservers = [
-      "194.242.2.3" # Mullvad
+      "9.9.9.9" # Quad9
       "1.1.1.1" # Cloudflare
     ];
   };
