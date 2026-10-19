@@ -20,6 +20,7 @@
           name = "niridium";
           email = "niridium@tuta.io";
         };
+        alias.lg = "log --oneline --graph --all";
       };
     };
   };
