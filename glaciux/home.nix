@@ -37,6 +37,7 @@
       ./userMods/gtk.nix
       ./userMods/helix.nix
       ./userMods/keepassxc.nix
+      ./userMods/obsStudio.nix
       ./userMods/qt.nix
       # ./userMods/screenshots.nix
       ./userMods/ssh.nix

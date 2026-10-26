@@ -69,5 +69,6 @@
     umbriel.enable = false;
     beets.enable = false;
     vscode.enable = true;
+    obs-studio.enable = true;
   };
 }
