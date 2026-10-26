@@ -1,4 +1,4 @@
-spawn-at-startup "noctalia"
+// spawn-at-startup "noctalia"
 spawn-at-startup "ghostty"
 include optional=true "noctalia.kdl"
 prefer-no-csd
@@ -63,6 +63,7 @@ recent-windows {
 }
 debug {
     honor-xdg-activation-with-invalid-serial true
+    keep-laptop-panel-on-when-lid-is-closed true
 }
 gestures {
     hot-corners {
