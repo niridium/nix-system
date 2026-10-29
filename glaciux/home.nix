@@ -33,6 +33,7 @@
       ./userMods/direnv.nix
       ./userMods/eza.nix
       ./userMods/ghostty.nix
+      ./userMods/foot.nix
       ./userMods/git.nix
       ./userMods/gtk.nix
       ./userMods/helix.nix
