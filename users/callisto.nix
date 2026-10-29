@@ -7,6 +7,8 @@
     typesetter
     typst
     gnome-calculator
+    neovim
+    ripgrep
     # Java
     temurin-bin
     jdt-language-server
