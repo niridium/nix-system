@@ -6,7 +6,7 @@
   cfg = config.glaciux.hardware;
 in {
   options.glaciux.hardware = {
-    enable = lib.mkEnableOption "hardware configurations" // {default = true;};
+    enable = lib.mkEnableOption "hardware configurations";
     laptop.enable = lib.mkEnableOption "laptop features";
     wireless.enable = lib.mkEnableOption "wireless connectivity";
   };

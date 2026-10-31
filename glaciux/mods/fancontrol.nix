@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  options.glaciux.fancontrol.enable = lib.mkEnableOption "fan controls" // {default = true;};
+  options.glaciux.fancontrol.enable = lib.mkEnableOption "fan controls";
   config = lib.mkIf config.glaciux.fancontrol.enable {
     users.groups.fan_ctl = {};
     boot.extraModprobeConfig = ''

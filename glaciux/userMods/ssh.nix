@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.ssh.enable = lib.mkEnableOption "ssh" // {default = true;};
+  options.glaciux.ssh.enable = lib.mkEnableOption "ssh";
   config = lib.mkIf config.glaciux.ssh.enable {
     services.ssh-agent.enable = true;
     programs.ssh = {

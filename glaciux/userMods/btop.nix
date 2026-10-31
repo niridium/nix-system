@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.btop.enable = lib.mkEnableOption "btop" // {default = true;};
+  options.glaciux.btop.enable = lib.mkEnableOption "btop";
   config = lib.mkIf config.glaciux.btop.enable {
     programs.btop = {
       enable = true;

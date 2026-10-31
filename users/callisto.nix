@@ -18,6 +18,8 @@
     poppler-utils
     python3
     nodejs
+    tinymist
+    marksman
   ];
   programs = {
     eclipse = {
@@ -66,7 +68,6 @@
     qt.enable = true;
     noctalia.enable = true;
     gtk.enable = true;
-    foot.enable = true;
     cava.enable = true;
     niri.enable = true;
     umbriel.enable = false;

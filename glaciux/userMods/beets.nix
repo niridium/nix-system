@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.beets.enable = lib.mkEnableOption "beets, music library manager" // {default = true;};
+  options.glaciux.beets.enable = lib.mkEnableOption "beets, music library manager";
   config = lib.mkIf config.glaciux.beets.enable {
     programs.beets = {
       enable = true;

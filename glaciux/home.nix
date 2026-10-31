@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  lib,
+  inputs,
+  ...
+}: {
   imports = [inputs.home-manager.nixosModules.home-manager];
   programs.dconf.enable = true; # Home Manager fails to start if it's disabled
   home-manager = {
@@ -21,6 +25,17 @@
           zoxide.enable = true;
           fzf.enable = true;
           fastfetch.enable = true;
+        };
+        glaciux = {
+          foot.enable = lib.mkDefault true;
+          git.enable = lib.mkDefault true;
+          ssh.enable = lib.mkDefault true;
+          eza.enable = lib.mkDefault true;
+          btop.enable = lib.mkDefault true;
+          helix.enable = lib.mkDefault true;
+          keepassxc.enable = lib.mkDefault true;
+          direnv.enable = lib.mkDefault true;
+          beets.enable = lib.mkDefault true;
         };
       }
       ./userMods/firefox/firefox.nix
