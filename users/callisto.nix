@@ -7,19 +7,13 @@
     typesetter
     typst
     gnome-calculator
-    neovim
-    ripgrep
     # Java
     temurin-bin
-    jdt-language-server
-    maven
     # Pi agent
     pi-coding-agent
     poppler-utils
     python3
     nodejs
-    tinymist
-    marksman
   ];
   programs = {
     eclipse = {
