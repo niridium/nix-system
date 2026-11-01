@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.direnv.enable = lib.mkEnableOption "direnv" // {default = true;};
+  options.glaciux.direnv.enable = lib.mkEnableOption "direnv";
   config = lib.mkIf config.glaciux.direnv.enable {
     programs.direnv = {
       enable = true;

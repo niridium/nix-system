@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.eza.enable = lib.mkEnableOption "eza" // {default = true;};
+  options.glaciux.eza.enable = lib.mkEnableOption "eza";
   config = lib.mkIf config.glaciux.eza.enable {
     home.shellAliases = {ls = "eza";};
     programs.eza = {

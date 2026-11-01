@@ -5,7 +5,7 @@
 }: let
   cfg = config.glaciux.foot;
 in {
-  options.glaciux.foot.enable = lib.mkEnableOption "foot terminal" // {default = true;};
+  options.glaciux.foot.enable = lib.mkEnableOption "foot terminal";
   config = lib.mkIf cfg.enable {
     programs.foot = {
       enable = true;

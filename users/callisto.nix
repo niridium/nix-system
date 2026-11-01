@@ -7,12 +7,8 @@
     typesetter
     typst
     gnome-calculator
-    neovim
-    ripgrep
     # Java
     temurin-bin
-    jdt-language-server
-    maven
     # Pi agent
     pi-coding-agent
     poppler-utils
@@ -66,7 +62,6 @@
     qt.enable = true;
     noctalia.enable = true;
     gtk.enable = true;
-    foot.enable = true;
     cava.enable = true;
     niri.enable = true;
     umbriel.enable = false;

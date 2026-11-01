@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     ./mods/appimage.nix
     ./mods/btrfsMaintenance.nix
@@ -26,6 +26,12 @@
     ./mods/virtualisation.nix
     ./mods/webdav.nix
   ];
+  glaciux = {
+    nix-ld.enable = lib.mkDefault true;
+    fancontrol.enable = lib.mkDefault true;
+    hardware.enable = lib.mkDefault true;
+    tailscale.enable = lib.mkDefault true;
+  };
   nixpkgs.config.allowUnfree = true;
   nix = {
     settings = {

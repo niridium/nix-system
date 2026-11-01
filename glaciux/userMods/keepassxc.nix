@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.keepassxc.enable = lib.mkEnableOption "keepassxc" // {default = true;};
+  options.glaciux.keepassxc.enable = lib.mkEnableOption "keepassxc";
   config = lib.mkIf config.glaciux.keepassxc.enable {
     services.gnome-keyring.enable = lib.mkForce false;
     programs.keepassxc = {

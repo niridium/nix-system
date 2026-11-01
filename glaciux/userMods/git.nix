@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.git.enable = lib.mkEnableOption "git" // {default = true;};
+  options.glaciux.git.enable = lib.mkEnableOption "git";
   config = lib.mkIf config.glaciux.git.enable {
     programs.git = {
       enable = true;

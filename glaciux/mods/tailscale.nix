@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  options.glaciux.tailscale.enable = lib.mkEnableOption "tailscale" // {default = true;};
+  options.glaciux.tailscale.enable = lib.mkEnableOption "tailscale";
   config = lib.mkIf config.glaciux.tailscale.enable {
     services.tailscale = {
       enable = true;
