@@ -9,10 +9,8 @@ memory when they conflict.
   — each must be manually registered in the corresponding `imports` or
   `sharedModules` list. Every listed module is loaded on every host/user, so each
   must be inert unless its `enable` option is set.
-- The `enable` flag lives in the **host file** (`hosts/<host>/default.nix`), never
-  in the user's file. The user is listed globally in `os.nix`.
-- Because `useGlobalPkgs = true` in Home Manager, set `nixpkgs.*` options in NixOS
-  modules. `nix.*` options (cache settings) belong in the HM sharedModules block.
+- NixOS module `enable` flags live in **host files** (`hosts/<host>/default.nix`).
+- HM module `enable` flags live in **user files** (`users/<name>.nix`).
 
 ## Writing Nix
 
@@ -76,8 +74,7 @@ Never run `nixos-rebuild switch/boot/test` or deploy unless explicitly asked.
 - Don't edit `.pre-commit-config.yaml`. It is a symlink to generated JSON.
 - Don't disable `programs.dconf.enable` in `glaciux/home.nix`; Home Manager won't start.
 - Don't change `system.stateVersion` or `home.stateVersion` (the latter is set
-  in `glaciux/home.nix`).
-- Don't uncomment or delete the commented-out entries in `glaciux/home.nix`.
+  in `glaciux/homeBase.nix`).
 - Don't commit secrets, tokens, or private keys.
 - Don't change `flake.nix` inputs or bump packages unless asked.
 - Regenerating `flake.lock` is fine when requested.
