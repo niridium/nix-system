@@ -11,52 +11,40 @@
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "bkp";
     sharedModules = [
+      ./homeBase.nix
       {
-        nix.settings = {
-          substituters = ["https://cache.nixos.org"];
-          trusted-public-keys = ["cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="];
-        };
-        home.stateVersion = "25.11";
-        xdg.autostart.enable = true;
-        programs = {
-          home-manager.enable = true;
-          bash.enable = true;
-          starship.enable = true;
-          zoxide.enable = true;
-          fzf.enable = true;
-          fastfetch.enable = true;
-        };
         glaciux = {
-          foot.enable = lib.mkDefault true;
-          neovim.enable = lib.mkDefault true;
-          git.enable = lib.mkDefault true;
-          ssh.enable = lib.mkDefault true;
-          eza.enable = lib.mkDefault true;
           btop.enable = lib.mkDefault true;
-          keepassxc.enable = lib.mkDefault true;
           direnv.enable = lib.mkDefault true;
+          eza.enable = lib.mkDefault true;
+          foot.enable = lib.mkDefault true;
+          git.enable = lib.mkDefault true;
+          keepassxc.enable = lib.mkDefault true;
+          neovim.enable = lib.mkDefault true;
+          ssh.enable = lib.mkDefault true;
         };
       }
-      ./userMods/firefox/firefox.nix
-      ./userMods/niri/niri.nix
-      ./userMods/umbriel/umbriel.nix
-      ./userMods/noctalia/noctalia.nix
       ./userMods/beets.nix
       ./userMods/btop.nix
       ./userMods/cava.nix
       ./userMods/direnv.nix
+      ./userMods/eclipse.nix
       ./userMods/eza.nix
-      ./userMods/ghostty.nix
+      ./userMods/firefox/firefox.nix
       ./userMods/foot.nix
+      ./userMods/ghostty.nix
       ./userMods/git.nix
       ./userMods/gtk.nix
       ./userMods/helix.nix
-      ./userMods/nvim/nvim.nix
       ./userMods/keepassxc.nix
+      ./userMods/mpd.nix
+      ./userMods/noctalia/noctalia.nix
+      ./userMods/niri/niri.nix
+      ./userMods/nvim/nvim.nix
       ./userMods/obsStudio.nix
       ./userMods/qt.nix
-      # ./userMods/screenshots.nix
       ./userMods/ssh.nix
+      ./userMods/umbriel/umbriel.nix
       ./userMods/vscode.nix
       ./userMods/zedEditor.nix
     ];
