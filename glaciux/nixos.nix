@@ -32,7 +32,12 @@
     hardware.enable = lib.mkDefault true;
     tailscale.enable = lib.mkDefault true;
   };
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    problems.handlers = {
+      "gtk+".broken = "warn"; # or "ignore"
+    };
+  };
   nix = {
     settings = {
       trusted-users = ["@wheel"];
