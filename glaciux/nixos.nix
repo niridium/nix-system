@@ -12,7 +12,6 @@
     ./mods/ios.nix
     ./mods/linkding.nix
     ./mods/llamaCpp.nix
-    ./mods/mpd.nix
     ./mods/navidrome.nix
     ./mods/nh.nix
     ./mods/nixLd.nix

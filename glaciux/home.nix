@@ -51,6 +51,7 @@
       ./userMods/git.nix
       ./userMods/gtk.nix
       ./userMods/helix.nix
+      ./userMods/mpd.nix
       ./userMods/nvim/nvim.nix
       ./userMods/keepassxc.nix
       ./userMods/obsStudio.nix
