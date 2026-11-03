@@ -3,7 +3,10 @@
   programs.wayvnc.enable = true;
   glaciux = {
     users.callisto.enable = true;
-    btrfsMaintenance.fs.root = {mountPoint = "/";};
+    btrfsMaintenance = {
+      enable = true;
+      fs.root = {mountPoint = "/";};
+    };
     swap.enable = true;
     gaming.enable = true;
     virtualisation.enable = true;

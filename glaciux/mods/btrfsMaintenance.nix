@@ -3,25 +3,26 @@
   lib,
   ...
 }: let
-  cfg = config.glaciux.btrfsMaintenance.fs;
+  cfg = config.glaciux.btrfsMaintenance;
 
-  # name == submodule name
-  # set == submodule attribute set
   fsBeesd = lib.mapAttrs' (name: set:
     lib.nameValuePair name {
       spec = set.mountPoint;
       extraOptions = ["--loadavg-target" "5.0"];
     })
-  cfg;
+  cfg.fs;
 in {
-  options.glaciux.btrfsMaintenance.fs = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.submodule {
-      options.mountPoint = lib.mkOption {
-        type = lib.types.str;
-      };
-    });
+  options.glaciux.btrfsMaintenance = {
+    enable = lib.mkEnableOption "Btrfs maintenance (auto-scrub + beesd)";
+    fs = lib.mkOption {
+      type = lib.types.attrsOf (lib.types.submodule {
+        options.mountPoint = lib.mkOption {
+          type = lib.types.str;
+        };
+      });
+    };
   };
-  config = lib.mkIf (cfg != {}) {
+  config = lib.mkIf cfg.enable {
     services.btrfs.autoScrub.enable = true;
     services.beesd.filesystems = fsBeesd;
   };
