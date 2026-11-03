@@ -15,11 +15,8 @@
     python3
     nodejs
   ];
+  glaciux.eclipse.enable = true;
   programs = {
-    eclipse = {
-      enable = true;
-      package = pkgs.eclipses.eclipse-java;
-    };
     rclone = {
       enable = true;
       remotes = {

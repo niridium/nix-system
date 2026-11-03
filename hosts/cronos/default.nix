@@ -12,9 +12,12 @@
       enable = true;
       linger = true;
     };
-    btrfsMaintenance.fs = {
-      root = {mountPoint = "/";};
-      storage = {mountPoint = "/storage";};
+    btrfsMaintenance = {
+      enable = true;
+      fs = {
+        root = {mountPoint = "/";};
+        storage = {mountPoint = "/storage";};
+      };
     };
     swap.enable = true;
     # gui = {
