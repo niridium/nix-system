@@ -8,7 +8,7 @@
     programs.git = {
       enable = true;
       signing = {
-        key = "/home/callisto/.ssh/key.pub";
+        key = "${config.home.homeDirectory}/.ssh/key.pub";
         signByDefault = true;
       };
       settings = {
