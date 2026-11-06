@@ -6,9 +6,9 @@ memory when they conflict.
 ## Architecture
 
 - Modules in `glaciux/mods/` and `glaciux/userMods/` are **not auto-discovered**
-  — each must be manually registered in the corresponding `imports` or
-  `sharedModules` list. Every listed module is loaded on every host/user, so each
-  must be inert unless its `enable` option is set.
+— each must be manually registered in the corresponding `imports` or
+`sharedModules` list. Every listed module is loaded on every host/user, so each
+must be inert unless its `enable` option is set.
 - NixOS module `enable` flags live in **host files** (`hosts/<host>/default.nix`).
 - HM module `enable` flags live in **user files** (`users/<name>.nix`).
 
@@ -32,8 +32,8 @@ in {
 Modules must be **generic** — never hard-code a host or user name in `glaciux/`.
 Host/user specifics belong in `hosts/<host>/` and `users/<name>.nix`.
 
-Look up option names in the local source first (`nixos-option`, `nix repl`), then
-[search.nixos.org](https://search.nixos.org/options?channel=unstable).
+Look up option names on [search.nixos.org](https://search.nixos.org/options?channel=unstable) first, then
+in the local source (`nixos-option`, `nix repl`).
 
 ## Build
 
