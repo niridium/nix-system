@@ -11,114 +11,118 @@ in {
       enable = true;
       defaultEditor = true;
       extensions = [
-        "opencode"
-        "catppuccin-icons"
+        "kdl"
+        "git-firefly"
+        "nix"
+        "html"
+        "typst"
+        "html-snippets"
+        "live-server"
+        "dockerfile"
+        "xml"
+        "toml"
+        "sql"
+        "emmet"
+        "codebook"
+        "java"
+        "lua"
       ];
       userSettings = {
         autosave = "on_focus_change";
+        auto_update = false;
         bottom_dock_layout = "full";
         buffer_font_family = "Iosevka Nerd Font";
+        buffer_font_size = 16;
+        buffer_font_weight = 300;
         buffer_line_height = "standard";
-        calls.mute_on_join = true;
-        collaboration_panel.button = false;
-        cursor_shape = "bar";
-        diagnostics.inline.enabled = true;
-        file_finder.file_icons = true;
-        focus_follows_mouse.enabled = true;
-        format_on_save = "off";
-        git.inline_blame.show_commit_summary = true;
-        gutter.folds = false;
-        helix_mode = true;
+        ui_font_family = "Iosevka Nerd Font";
+        ui_font_size = 18;
+        ui_font_weight = 300;
+        close_panel_on_toggle = true;
+        code_lens = "on";
+        diff_view_style = "unified";
+        disable_ai = true;
+        drop_target_size = 0.5;
+        rounded_selection = false;
+        gutter = {
+          bookmarks = false;
+          breakpoints = true;
+          folds = false;
+          min_line_number_digits = 0;
+          runnables = true;
+        };
         minimap.show = "never";
-        outline_panel.button = false;
-        scroll_beyond_last_line = "vertical_scroll_margin";
-        search.button = false;
-        soft_wrap = "editor_width";
-        use_smartcase_search = true;
-        use_system_window_tabs = true;
-
-        agent = {
-          dock = "left";
-          single_file_review = true;
-          enable_feedback = false;
-          show_turn_stats = true;
-          play_sound_when_agent_done = "when_hidden";
-          default_model = {
-            provider = "ollama";
-            model = "qwen3.5:9b";
-            enable_thinking = true;
-          };
-        };
-
-        edit_predictions = {
-          ollama = {
-            model = "qwen2.5-coder:7b-base";
-            api_url = "https://ollama.sole-alkaid.ts.net";
-          };
-          provider = "ollama";
-          mode = "eager";
-        };
-
-        git_panel = {
-          dock = "right";
-          tree_view = true;
-        };
-
-        icon_theme = {
-          mode = "system";
-          light = "Catppuccin Latte";
-          dark = "Catppuccin Macchiato";
-        };
-
-        indent_guides = {
-          active_line_width = 10;
-          background_coloring = "indent_aware";
-          coloring = "indent_aware";
-          enabled = true;
-          line_width = 2;
-        };
-
-        language_models = {
-          ollama = {
-            context_window = 64000;
-            api_url = "https://ollama.sole-alkaid.ts.net";
-          };
-        };
-
-        project_panel = {
-          entry_spacing = "standard";
-          git_status = false;
-          hide_root = true;
-          indent_size = 12;
-        };
-
-        tabs = {
-          file_icons = true;
-          show_close_button = "hidden";
-        };
-
         tab_bar = {
+          show = true;
           show_nav_history_buttons = false;
-          show_tab_bar_buttons = false;
           show_pinned_tabs_in_separate_row = true;
+          show_tab_bar_buttons = false;
         };
-
-        terminal = {
-          shell = "system";
-          font_size = 16;
-          font_family = "Iosevka Nerd Font";
-          cursor_shape = "bar";
+        tabs.show_close_button = "hidden";
+        drag_and_drop_selection.enabled = false;
+        toolbar = {
+          breadcrumbs = false;
+          selections_menu = false;
+          quick_actions = false;
         };
-
+        extend_comment_on_newline = false;
+        focus_follows_mouse = {
+          enabled = true;
+          debounce_ms = 0;
+        };
+        diagnostics.inline.enabled = true;
+        git.inline_blame = {
+          show_commit_summary = true;
+          location = "status_bar";
+        };
+        inlay_hints.enabled = true;
+        journal.hour_format = "hour24";
+        semantic_tokens = "combined";
+        document_folding_ranges = "on";
+        soft_wrap = "editor_width";
         theme = {
           mode = "system";
           light = "Noctalia Light";
           dark = "Noctalia Dark";
         };
-
-        title_bar = {
-          button_layout = "";
-          show_sign_in = false;
+        title_bar.show_sign_in = false;
+        window_decorations = "server";
+        vim_mode = true;
+        which_key = {
+          enabled = true;
+          delay_ms = 500;
+        };
+        project_panel = {
+          button = false;
+          entry_spacing = "standard";
+          git_status = false;
+          hide_root = true;
+          indent_size = 12;
+          file_icons = false;
+        };
+        collaboration_panel.button = false;
+        git_panel = {
+          dock = "right";
+          tree_view = true;
+          commit_editor = "collapsed";
+          show_count_badge = true;
+        };
+        outline_panel.button = false;
+        calls.mute_on_join = true;
+        completion_menu_item_kind = "symbol";
+        completion_menu_scrollbar = "auto";
+        completions.words = "enabled";
+        text_rendering_mode = "grayscale";
+        markdown_preview = {
+          font_family = "Iosevka Nerd Font";
+          code_font_family = "Iosevka Nerd Font Mono";
+        };
+        indent_guides = {
+          enabled = true;
+          line_width = 5;
+          active_line_width = 10;
+          coloring = "indent_aware";
+          background_coloring = "indent_aware";
         };
 
         languages = {
@@ -145,7 +149,6 @@ in {
             formatter = {
               external = {
                 command = "alejandra";
-                # arguments = ["--exclude flake.nix"];
               };
             };
           };
