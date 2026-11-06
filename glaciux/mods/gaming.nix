@@ -28,7 +28,6 @@ in {
     home-manager.sharedModules = [lutris];
     programs.gamemode.enable = true;
     environment.systemPackages = [pkgs.moonlight-qt];
-    nixpkgs.config.allowUnfreePackages = ["steam" "steam-unwrapped"];
     programs.steam = {
       enable = true;
       extest.enable = true;
