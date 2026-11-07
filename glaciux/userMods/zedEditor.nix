@@ -32,12 +32,12 @@ in {
         auto_update = false;
         bottom_dock_layout = "full";
         buffer_font_family = "Iosevka Nerd Font";
-        buffer_font_size = 16;
-        buffer_font_weight = 300;
+        buffer_font_size = 18;
+        buffer_font_weight = 400;
         buffer_line_height = "standard";
         ui_font_family = "Iosevka Nerd Font";
         ui_font_size = 18;
-        ui_font_weight = 300;
+        ui_font_weight = 400;
         close_panel_on_toggle = true;
         code_lens = "on";
         diff_view_style = "unified";

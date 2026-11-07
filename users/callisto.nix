@@ -61,7 +61,7 @@
     gtk.enable = true;
     cava.enable = true;
     niri.enable = true;
-    umbriel.enable = false;
+    umbriel.enable = true;
     beets.enable = false;
     vscode.enable = true;
     obs-studio.enable = true;

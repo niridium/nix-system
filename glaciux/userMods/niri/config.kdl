@@ -1,4 +1,3 @@
-// spawn-at-startup "noctalia"
 spawn-at-startup "ghostty"
 include optional=true "noctalia.kdl"
 prefer-no-csd
@@ -79,6 +78,9 @@ binds {
     }
     Mod+F {
         maximize-column
+    }
+    Mod+Shift+F {
+        fullscreen-window
     }
     Mod+O repeat=false {
         toggle-overview
