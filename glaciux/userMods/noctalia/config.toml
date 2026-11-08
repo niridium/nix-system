@@ -5,29 +5,29 @@ enable_sounds = true
 order = ["widgets"]
 
 [bar.widgets]
-background_opacity = 1
-border_width = 0.0
+background_opacity = 0.7
+border_width = 2.0
 capsule = true
-capsule_opacity = 0.0
+capsule_opacity = 0.2
 capsule_padding = 10.0
-capsule_radius = 0
-capsule_thickness = 1
+capsule_radius = "auto"
+capsule_thickness = 0.7
 center = ["bar", "clock", "bar_2", "battery-graph-widget"]
 contact_shadow = false
 end = [
-  "nix-monitor",
-  "tray",
-  "notifications",
-  "clipboard",
-  "brightness",
-  "volume",
-  "bluetooth",
-  "network",
-  "battery",
+    "nix-monitor",
+    "tray",
+    "notifications",
+    "clipboard",
+    "brightness",
+    "volume",
+    "bluetooth",
+    "network",
+    "battery",
 ]
 font_family = "Iosevka NF"
 font_weight = 400
-layer = "overlay"
+layer = "top"
 margin_edge = 0
 margin_ends = 0
 panel_overlap = 0
@@ -45,6 +45,7 @@ enable_ddcutil = true
 [control_center]
 sidebar = "full"
 sidebar_section = "none"
+circular_avatar = false
 width = 1000
 
 [control_center.calendar]
@@ -55,7 +56,7 @@ enabled = false
 
 [dock]
 enabled = true
-background_opacity = 1
+background_opacity = 0.7
 launcher_position = "start"
 layer = "overlay"
 position = "left"
@@ -107,14 +108,15 @@ layer = "overlay"
 
 [osd]
 offset_y = 20
+background_opacity = 0.7
 position = "top_center"
 
 [plugins]
 enabled = [
-  "avivbintangaringga/nix-monitor",
-  "noctalia/world_clock",
-  "yuuto/calculator",
-  "piero-93/thinkpad-fan",
+    "avivbintangaringga/nix-monitor",
+    "noctalia/world_clock",
+    "yuuto/calculator",
+    "piero-93/thinkpad-fan",
 ]
 
 [shell]
@@ -124,7 +126,13 @@ font_family = "Iosevka NF"
 launch_apps_as_systemd_services = true
 password_style = "default"
 polkit_agent = true
+settings_window_translucent = true
+show_close_buttons = false
+umbriel_audio_provider_enabled = true
 telemetry_enabled = true
+
+[shell.animation]
+speed = 0.9
 
 [shell.greeter_sync]
 auto_sync = true
@@ -143,6 +151,7 @@ open_near_click_control_center = true
 open_near_click_session = true
 open_near_click_wallpaper = true
 polkit_placement = "attached"
+transparency_mode = "glass"
 
 [shell.screen_corners]
 enabled = false
@@ -157,7 +166,7 @@ mru = true
 gpu_poll_seconds = 5
 
 [theme]
-community_palette = "Breeze"
+community_palette = "Sway Classic"
 mode = "auto"
 pure_black_dark = false
 source = "wallpaper"
@@ -165,17 +174,30 @@ wallpaper_scheme = "faithful"
 
 [theme.templates]
 builtin_ids = [
-  "btop",
-  "cava",
-  "gtk3",
-  "gtk4",
-  "ghostty",
-  "helix",
-  "niri",
-  "qt",
-  "starship",
+    "btop",
+    "cava",
+    "foot",
+    "gtk3",
+    "gtk4",
+    "ghostty",
+    "helix",
+    "niri",
+    "qt",
+    "umbriel",
 ]
-community_ids = ["pywalfox-beta4", "zed", "papirus-icons", "yazi"]
+community_ids = [
+    "pi-agent",
+    "pywalfox-beta4",
+    "neovim",
+    "vscode",
+    "zed",
+    "fastfetch",
+    "obs",
+    "sioyek",
+    "papirus-icons",
+    "fzf",
+    "yazi",
+]
 
 [wallpaper]
 directory = "/home/callisto/cronos-box/Pictures/Wallpapers"

@@ -13,7 +13,6 @@ in {
         main = {
           include = "~/.config/foot/themes/noctalia";
           font = "Iosevka Nerd Font Mono:pixelsize=18";
-          gamma-correct-blending = "yes";
           pad = "0x0 center";
           bold-text-in-bright = "palette-based";
         };
@@ -22,6 +21,14 @@ in {
         };
         bell = {
           notify = "yes";
+        };
+        colors-dark = {
+          blur = "yes";
+          alpha = 0.8;
+        };
+        colors-light = {
+          blur = "yes";
+          alpha = 0.8;
         };
       };
     };

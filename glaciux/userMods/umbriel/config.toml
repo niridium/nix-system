@@ -19,10 +19,22 @@ xwayland = true
 prefer_no_csd = true
 border_width = 4
 corner_radius = 0
+[[window_rule]]
+blur = true
+blur_optimized = false
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+blur = true
+blur_ignore_alpha = 0.6
+blur_optimized = false
 [layout]
 gap = 0
 [layout.scrolling]
 default_extent_fraction = 0.5
+[workspaces]
+empty_above = true
+[input.touchpad]
+natural_scroll = true
 [input.keyboard]
 layout = "us,us"
 variant = "colemak,euro"
