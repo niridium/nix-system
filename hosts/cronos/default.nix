@@ -36,7 +36,6 @@
       isBuilder = true;
     };
     immich.enable = true;
-    mpd.enable = true;
     navidrome.enable = true;
     openssh.enable = true;
     ollama.enable = false;
