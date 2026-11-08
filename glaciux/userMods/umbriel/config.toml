@@ -40,10 +40,13 @@ layout = "us,us"
 variant = "colemak,euro"
 options = "grp:caps_toggle"
 [input.cursor]
+follows_focus = true
 hide_when_typing = true
 hide_timeout_ms = 4000
 [input.focus]
 follows_mouse = true
+[input.drag_edge_scroll]
+enabled = true
 [keybinds]
 "Mod+Shift+Slash" = "cheatsheet-toggle"
 "Mod+C" = { action = "window-close", repeat = false }
@@ -64,6 +67,8 @@ follows_mouse = true
 "Mod+Alt+J" = "window-move-or-workspace-down"
 "Mod+Alt+K" = "window-move-or-workspace-up"
 "Mod+Alt+L" = "window-consume-or-expel-right"
+"Mod+WheelDown" = {action = "workspace-next", repeat = false}
+"Mod+WheelUp" = {action = "workspace-previous", repeat = false}
 "Mod+Alt+Shift+J" = "window-move-to-output-down"
 "Mod+Alt+Shift+K" = "window-move-to-output-up"
 "Mod+Comma" = "window-cycle-primary-extent"
