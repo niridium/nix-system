@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     immich-cli
-    gelly
+    # gelly
+    euphonica
     tutanota-desktop
     drawio
     typesetter
@@ -11,9 +12,9 @@
     temurin-bin
     # Pi agent
     pi-coding-agent
+    wl-clipboard
     poppler-utils
     python3
-    nodejs
   ];
   glaciux.eclipse.enable = true;
   programs = {
