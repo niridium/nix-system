@@ -35,10 +35,7 @@ default_extent_fraction = 0.5
 empty_above = true
 [input.touchpad]
 natural_scroll = true
-[input.keyboard]
-layout = "us,us"
-variant = "colemak,euro"
-options = "grp:caps_toggle"
+disable_while_typing = false
 [input.cursor]
 follows_focus = true
 hide_when_typing = true
