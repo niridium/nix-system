@@ -8,6 +8,7 @@
     typesetter
     typst
     gnome-calculator
+    calibre
     # Java
     temurin-bin
     # Pi agent
