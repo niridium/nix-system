@@ -10,7 +10,6 @@ border_width = 2.0
 capsule = true
 capsule_opacity = 0.2
 capsule_padding = 10.0
-capsule_radius = "auto"
 capsule_thickness = 0.7
 center = ["bar", "clock", "bar_2", "battery-graph-widget"]
 contact_shadow = false
@@ -45,7 +44,6 @@ enable_ddcutil = true
 [control_center]
 sidebar = "full"
 sidebar_section = "none"
-circular_avatar = false
 width = 1000
 
 [control_center.calendar]
@@ -120,7 +118,7 @@ enabled = [
 ]
 
 [shell]
-app_icon_colorize = false
+circular_avatar = false
 corner_radius_scale = 0.0
 font_family = "Iosevka NF"
 launch_apps_as_systemd_services = true
@@ -209,12 +207,6 @@ path = "/home/callisto/cronos-box/Pictures/Wallpapers/wallhaven-rqjxk7.png"
 [widget.bar]
 type = "noctalia/world_clock:bar"
 
-[widget.bar_2]
-type = "yuuto/calculator:bar"
-
-[widget.battery-graph-widget]
-type = "frai3mega/battery-graph:battery-graph-widget"
-
 [widget.nix-monitor]
 type = "avivbintangaringga/nix-monitor:nix-monitor"
 
@@ -232,23 +224,11 @@ show_label = false
 [widget.clock]
 format = "{:%d / %H:%M}"
 
-[widget.cpu]
-display = "text"
-
 [widget.network]
 show_label = false
 
 [widget.notifications]
 hide_when_no_unread = true
 
-[widget.ram]
-display = "text"
-
 [widget.volume]
 show_label = false
-
-[widget.wallhaven]
-type = "noctalia/wallhaven:wallhaven"
-
-[widget.workspaces]
-minimal = true
