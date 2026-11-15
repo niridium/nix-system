@@ -1,5 +1,5 @@
 // Securefox
-// Version 152
+// Version 154
 
 // TRACKING PROTECTION
 // user_pref("privacy.antitracking.enableWebcompat", false);
@@ -72,3 +72,12 @@ user_pref("geo.provider.network.url", "https://beacondb.net/v1/geolocate");
 // EXPERIMENTS
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
+
+// PREF: disable remote improvements [FF148+]
+// [SETTING] Allow Firefox to improve features, performance, and stability between updates.
+// [1] https://support.mozilla.org/kb/remote-improvements
+// [2] https://experimenter.info/
+user_pref("nimbus.rollouts.enabled", false);
+
+// PREF: disable unsubmitted crash reports
+user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // [DEFAULT ENFORCE]

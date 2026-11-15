@@ -1,5 +1,5 @@
 // Fastfox
-// Version 152
+// Version 154
 
 // GENERAL
 user_pref("gfx.content.skia-font-cache-size", 20); // 20 MB; default=5; Chrome=20
@@ -15,7 +15,7 @@ user_pref("media.wmf.zero-copy-nv12-textures-force-enabled", true);
 user_pref("gfx.canvas.accelerated.cache-size", 512); // default=256; Chrome=512; max=2048
 
 // JAVASCRIPT
-user_pref("javascript.options.baselinejit.threshold", 50); // default=100
+//user_pref("javascript.options.baselinejit.threshold", 50); // default=100
 user_pref("javascript.options.concurrent_multiprocess_gcs.cpu_divisor", 2); // default=4
 
 // DISK CACHE

@@ -1,5 +1,5 @@
 // Peskyfox
-// Version 152
+// Version 154
 
 // MOZILLA UI
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);

@@ -1,5 +1,5 @@
 // Smoothfox
-// Version 152
+// Version 154
 
 // NATURAL SMOOTH SCROLLING V3 [MODIFIED]
 user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
