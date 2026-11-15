@@ -13,6 +13,24 @@
       extraPackages = with pkgs; [mangohud winetricks];
     };
   };
+  steam = {
+    programs.steam = {
+      enable = true;
+      extest.enable = true;
+      extraCompatPackages = [pkgs.proton-ge-bin];
+    };
+  };
+  sunshine = lib.optionalAttrs cfg.server.enable {
+    udev.extraRules = ''
+      KERNEL=="uinput", MODE="0660", GROUP="input", SYMLINK+="uinput"
+    '';
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+  };
 in {
   options.glaciux.gaming = {
     enable = lib.mkEnableOption "gaming programs";
@@ -25,23 +43,15 @@ in {
     };
   };
   config = lib.mkIf cfg.enable {
-    home-manager.sharedModules = [lutris];
+    home-manager.sharedModules = [lutris steam sunshine];
     programs.gamemode.enable = true;
     environment.systemPackages = [pkgs.moonlight-qt];
-    programs.steam = {
-      enable = true;
-      extest.enable = true;
-      extraCompatPackages = [pkgs.proton-ge-bin];
-    };
     boot.kernelParams = lib.mkIf (cfg.server.virtualDisplay != "") ["amdgpu.virtual_display=${cfg.server.virtualDisplay},x"];
-    services = lib.mkIf cfg.server.enable {
-      udev.extraRules = ''KERNEL=="uinput", MODE="0660", GROUP="input", SYMLINK+="uinput" '';
-      sunshine = {
-        enable = true;
-        autoStart = true;
-        capSysAdmin = true;
-        openFirewall = true;
-      };
+    services = {
+      udev.extraRules = ''
+        ACTION=="add|change", ATTRS{name}=="Sony Interactive Entertainment DualSense Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+        ACTION=="add|change", ATTRS{name}=="DualSense Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+      '';
     };
   };
 }
