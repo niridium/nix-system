@@ -31,7 +31,7 @@ Personal NixOS flake — multi-host, multi-user, composable feature flags.
 
 These modules have `enable = mkDefault true`:
 
-**NixOS** — `appimage`, `fancontrol`, `flatpak`, `hardware`, `nh`, `nixLd`, `oom`, `tailscale`
+**NixOS** — `appimage`, `fancontrol`, `flatpak`, `hardware`, `nh`, `nix-ld`, `oom`, `tailscale`
 **Home Manager** — `btop`, `direnv`, `eza`, `foot`, `git`, `keepassxc`, `neovim`, `ssh`
 
 
