@@ -7,7 +7,10 @@
       enable = true;
       fs.root = {mountPoint = "/";};
     };
-    swap.enable = true;
+    swap = {
+      enable = true;
+      zswapPool = 50;
+    };
     gaming.enable = true;
     virtualisation.enable = true;
     hardware = {
