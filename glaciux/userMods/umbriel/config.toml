@@ -11,7 +11,7 @@ mode = "2560x1440@143.999000"
 position = [-512, -1440]
 hdr = "auto"
 bit_depth = 10
-vrr = "fullscreen"
+vrr = "disabled"
 [general]
 autostart = ["foot"]
 xwayland = true
