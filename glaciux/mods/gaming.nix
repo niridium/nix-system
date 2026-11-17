@@ -27,7 +27,7 @@ in {
   config = lib.mkIf cfg.enable {
     home-manager.sharedModules = [lutris];
     programs.gamemode.enable = true;
-    environment.systemPackages = [pkgs.moonlight-qt];
+    environment.systemPackages = with pkgs; [moonlight-qt prismlauncher];
     programs.steam = {
       enable = true;
       extest.enable = true;
