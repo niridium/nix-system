@@ -39,7 +39,7 @@
     flatpak.enable = lib.mkDefault true;
     hardware.enable = lib.mkDefault true;
     nh.enable = lib.mkDefault true;
-    nix-ld.enable = lib.mkDefault true;
+    nixLd.enable = lib.mkDefault true;
     oom.enable = lib.mkDefault true;
     tailscale.enable = lib.mkDefault true;
   };

@@ -5,7 +5,7 @@
   ...
 }: {
   options.glaciux.nixLd.enable = lib.mkEnableOption "nix-ld";
-  config = lib.mkIf config.glaciux.nix-ld.enable {
+  config = lib.mkIf config.glaciux.nixLd.enable {
     programs.nix-ld = {
       enable = true;
       libraries = with pkgs; [
