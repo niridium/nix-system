@@ -16,6 +16,7 @@
     wl-clipboard
     poppler-utils
     python3
+    brave-origin
   ];
   glaciux.eclipse.enable = true;
   programs = {
