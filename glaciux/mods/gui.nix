@@ -33,7 +33,8 @@ in {
         home.packages = with pkgs; [
           xwayland-satellite # X11 compatibility
           ddcutil # Backlight control
-          nautilus # File manager
+          pcmanfm
+          file-roller
           imv # Image viewer
           mpv # Video player
           sioyek # PDF reader
